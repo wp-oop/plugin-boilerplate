@@ -11,6 +11,7 @@ services:
         PROJECT_MOUNT_PATH: $PROJECT_MOUNT_PATH
         BUILD_ROOT_PATH: $BUILD_ROOT_PATH
         DOCROOT_PATH: $DOCROOT_PATH
+        WP_DOMAIN: ${WP_DOMAIN}
     container_name: "${PROJECT_NAME}_wp_dev"
     depends_on:
       - db
