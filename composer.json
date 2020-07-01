@@ -5,8 +5,9 @@
   "license": "GPL-2.0-or-later",
   "authors": [
     {
-      "name": "Me",
-      "email": "me@my.com"
+      "name": "Anton Ukhanev",
+      "email": "xedin.unknown@gmail.com",
+      "role": "Developer"
     }
   ],
   "require": {
