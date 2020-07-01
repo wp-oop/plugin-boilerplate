@@ -1,4 +1,4 @@
-#!/bin/bash -xv
+#!/bin/bash
 set -e
 
 if wait-for-it.sh "${WORDPRESS_DB_HOST}" -t 60; then
