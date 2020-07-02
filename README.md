@@ -124,6 +124,20 @@ is already configured for this.
 Any changes to the project folder are immediately reflected in the dev environment,
 and this includes the `vendor` folder and `composer.lock` file. This is because
 the project's folder is mounted into the correct place in the WordPress container.
+
+#### Testing Code
+This bootstrap includes PHPUnit. It is already configured, and you can test
+that it's working by running the sample tests:
+
+```bash
+docker-compose run --rm build vendor/bin/phpunit
+```
+
+If you use PHPStorm, you can use its PHPUnit integration: right-click on any
+test or folder inside the `tests` directory, and choose "Run". This will do
+the same as the above command. Because the `build` service is used for tests,
+they will be run with its PHP version, which should correspond to your project's
+minimal requirements.
         
 [Docker Machine]: https://github.com/docker/machine
 [WP-CLI]: https://wp-cli.org/
