@@ -19,6 +19,11 @@ Use this project as a starter for your modular WordPress plugin!
     * **xDebug** - Set breakpoints and inspect your code in PHPStorm.
     * **Code coverage** - See what has not been tested yet in a friendly GUI.
     
+- **Static Code Analysis** - Maintain a consistent coding style, and catch problems early.
+
+    * **[Psalm][]** - Inspects your code for problems.
+    * **[PHPCS][]** - Checks your code style. [PHPCBF][] can fix some of them automatically.
+    
 ### Usage
 
 #### Getting Started
@@ -213,6 +218,9 @@ provide assistance during coding.
 [phpMyAdmin]: https://www.phpmyadmin.net/
 [PSR-12]: https://www.php-fig.org/psr/psr-12/
 [Slevomat Coding Standard]: https://github.com/slevomat/coding-standard
+[Psalm]: https://psalm.dev/
+[PHPCS]: https://github.com/squizlabs/PHP_CodeSniffer
+[PHPCBF]: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically
 [hosts file]: https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/
 [your machine's IP address]: https://www.whatismybrowser.com/detect/what-is-my-local-ip-address
 [composer integration]: https://www.jetbrains.com/help/phpstorm/using-the-composer-dependency-manager.html#updating-dependencies
