@@ -29,3 +29,6 @@ jobs:
 
     - name: Psalm
       run: ./vendor/bin/psalm --show-info=false --threads=8
+
+    - name: PHPCS
+      run: ./vendor/bin/phpcs -s --report-source --runtime-set ignore_warnings_on_exit 1

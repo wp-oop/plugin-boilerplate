@@ -193,11 +193,26 @@ provide assistance during coding.
     ```
   
   Will also be run automatically on CI.
+  
+- **PHPCS**
+
+    Run PHPCS/PHPCBF in project root:
+    
+    ```bash
+    docker-compose run --rm test vendor/bin/phpcs -s --report-source --runtime-set ignore_warnings_on_exit 1
+    docker-compose run --rm test vendor/bin/phpcbf
+    ```
+  
+    By default, uses [PSR-12][] and some rules from the [Slevomat Coding Standard][].
+    
+    Will also be run automatically on CI.
 
         
 [Docker Machine]: https://github.com/docker/machine
 [WP-CLI]: https://wp-cli.org/
 [phpMyAdmin]: https://www.phpmyadmin.net/
+[PSR-12]: https://www.php-fig.org/psr/psr-12/
+[Slevomat Coding Standard]: https://github.com/slevomat/coding-standard
 [hosts file]: https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/
 [your machine's IP address]: https://www.whatismybrowser.com/detect/what-is-my-local-ip-address
 [composer integration]: https://www.jetbrains.com/help/phpstorm/using-the-composer-dependency-manager.html#updating-dependencies
