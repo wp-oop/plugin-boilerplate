@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6d2364bbddee45262bd63ab5dff63a5a",
+    "content-hash": "40af7cb44850c515c32b58172a4747d5",
     "packages": [],
     "packages-dev": [
         {
@@ -79,16 +79,16 @@
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "5.4.x-dev",
+            "version": "5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "b15f01456c1c0d26f66a57f736fd6d01ef1b4ac3"
+                "reference": "3e67d8b6ee6c11e8ce404da4627117fb7fbf9266"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/b15f01456c1c0d26f66a57f736fd6d01ef1b4ac3",
-                "reference": "b15f01456c1c0d26f66a57f736fd6d01ef1b4ac3",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/3e67d8b6ee6c11e8ce404da4627117fb7fbf9266",
+                "reference": "3e67d8b6ee6c11e8ce404da4627117fb7fbf9266",
                 "shasum": ""
             },
             "require": {
@@ -96,7 +96,7 @@
                 "php": ">=5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "5.4.x-dev"
+                "wordpress/core-implementation": "5.4.2"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -116,7 +116,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2020-07-01T09:47:31+00:00"
+            "time": "2020-06-10T22:05:38+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -1552,7 +1552,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "johnpbloch/wordpress-core": 0
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
