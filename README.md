@@ -10,6 +10,15 @@ Use this project as a starter for your modular WordPress plugin!
     a Docker image containing a complete WordPress installation with your
     plugin and all pre-requisites.
     
+- **PHPStorm** - Configuration for integrations of arguably the best PHP
+    IDE out there, including:
+    
+    * **Database client** - View and manipulate the database from PHPStorm.
+    * **Composer** - Install and manage PHP dependencies on the correct version of PHP without leaving the IDE.
+    * **PHPUnit** - Run tests and get reports directly in PHPStorm.
+    * **xDebug** - Set breakpoints and inspect your code in PHPStorm.
+    * **Code coverage** - See what has not been tested yet in a friendly GUI.
+    
 ### Usage
 
 #### Getting Started
