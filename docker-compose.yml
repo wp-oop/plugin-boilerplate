@@ -62,6 +62,19 @@ services:
     volumes:
     -  ${BASE_PATH}:${BUILD_ROOT_PATH}
 
+  test:
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile_wp
+      target: test
+      args:
+        BUILD_ROOT_PATH: $BUILD_ROOT_PATH
+        PHP_BUILD_VERSION: $PHP_BUILD_VERSION
+    container_name: "${PROJECT_NAME}_test"
+    working_dir: ${BUILD_ROOT_PATH}
+    volumes:
+      -  ${BASE_PATH}:${BUILD_ROOT_PATH}
+
 volumes:
   wordpress:
   db:
