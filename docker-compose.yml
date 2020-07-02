@@ -49,6 +49,19 @@ services:
     volumes:
       - db:/var/lib/mysql
 
+  db_admin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: "${PROJECT_NAME}_db_admin"
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
+    depends_on:
+      - db
+    ports:
+    - 1234:80
+#    volumes:
+#    - db_admin
+
   build:
     build:
       context: ./
@@ -78,3 +91,4 @@ services:
 volumes:
   wordpress:
   db:
+  db_admin:

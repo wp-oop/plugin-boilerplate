@@ -49,10 +49,12 @@ Use Composer to bootstrap your project.
             to the WordPress database. Change these if you want to secure your deployed application.
         * `WP_DOMAIN`* - The domain name of the WordPress application, which contains your plugin.
             Among other things, used to set up the local dev image. Corresponds to the alias
-            used in the `hosts` file, if local.
+            used in the `hosts` file, if local. This value is also used in the PHPStorm's DB integration.
+            If this value is changed, PHPStorm's configuration must be updated.
         * `WP_TITLE`* - The title of the WordPress application, which contains your plugin.
-            No quotes, because Docker does not expand variables in this file. Used during automatic
-            installation of WordPress inside the local dev image.
+            No quotes, because Docker does not expand variables in this file. It is used during automatic
+            installation of WordPress inside the local dev image. This value is also used in the
+            PHPStorm's DB integration. If this value is changed, PHPStorm's configuration must be updated.
         * `ADMIN_USER`* - This and other `ADMIN_*` variables are used to determine WordPress admin
             details during automatic WordPress installation with [WP-CLI][].
             
@@ -138,12 +140,35 @@ test or folder inside the `tests` directory, and choose "Run". This will do
 the same as the above command. Because the `build` service is used for tests,
 they will be run with its PHP version, which should correspond to your project's
 minimal requirements.
+
+#### Database UI
+This bootstrap includes [phpMyAdmin][], which provides a GUI for your database.
+To start working with it, you must first bring up the related container,
+as it is not brought up together with the dev environment:
+
+```bash
+docker-compose up
+```
+
+You can now head over to the application's domain, defined usually by the
+`WP_DOMAIN` value from the `.env` file, but access it on port `1234`, e.g.
+`http://plugin.myhost:1234`. The username is `root`, and password is the one
+specified by the `DB_ROOT_PASSWORD` variable in the `.env` file.
+
+This bootstrap comes ready with configuration for PHPStorm's [database integration][].
+With it, it's possible to completely avoid bringing up the `db_admin` service.
+To use it, its settings must be up to date from the value of `DB_USER_PASSWORD`.
+Using it is highly recommended, as it is an integrated DB client, and will
+provide assistance during coding.
+
         
 [Docker Machine]: https://github.com/docker/machine
 [WP-CLI]: https://wp-cli.org/
+[phpMyAdmin]: https://www.phpmyadmin.net/
 [hosts file]: https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/
 [your machine's IP address]: https://www.whatismybrowser.com/detect/what-is-my-local-ip-address
 [composer integration]: https://www.jetbrains.com/help/phpstorm/using-the-composer-dependency-manager.html#updating-dependencies
+[database integration]: https://www.jetbrains.com/help/phpstorm/configuring-database-connections.html
 [`container_name`]: https://docs.docker.com/compose/compose-file/#container_name
 [`php`]: https://hub.docker.com/_/php
 [`wordpress`]: https://hub.docker.com/_/wordpress
