@@ -183,6 +183,17 @@ To use it, its settings must be up to date from the value of `DB_USER_PASSWORD`.
 Using it is highly recommended, as it is an integrated DB client, and will
 provide assistance during coding.
 
+#### Static Analysis
+- **Psalm**
+
+    Run Psalm in project root:
+
+    ```bash
+    docker-compose run --rm test vendor/bin/psalm
+    ```
+  
+  Will also be run automatically on CI.
+
         
 [Docker Machine]: https://github.com/docker/machine
 [WP-CLI]: https://wp-cli.org/

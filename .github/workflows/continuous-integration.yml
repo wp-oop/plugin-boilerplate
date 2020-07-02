@@ -26,3 +26,6 @@ jobs:
 
     - name: PhpUnit
       run: ./vendor/bin/phpunit
+
+    - name: Psalm
+      run: ./vendor/bin/psalm --show-info=false --threads=8

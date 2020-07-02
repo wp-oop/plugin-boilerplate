@@ -23,6 +23,8 @@ ARG BUILD_ROOT_PATH
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 RUN pecl install xdebug-2.6.0
+RUN docker-php-ext-install pcntl
+RUN docker-php-ext-install posix
 
 WORKDIR ${BUILD_ROOT_PATH}
 COPY --from=build ${BUILD_ROOT_PATH} ${BUILD_ROOT_PATH}
