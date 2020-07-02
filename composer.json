@@ -19,6 +19,11 @@
     "vimeo/psalm": "^3.11.7",
     "slevomat/coding-standard": "^6.0"
   },
+  "autoload": {
+    "psr-4": {
+      "Me\\Plugin\\": "src"
+    }
+  },
   "autoload-dev": {
     "psr-4": {
       "Me\\Plugin\\Test\\": "tests"

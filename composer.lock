@@ -2770,12 +2770,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "fa0f43f0cf56e03eed7f4194db0e421236010b72"
+                "reference": "ea82cdc6ea1b7af058a0cdd1c207f99ec1c3dc7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/fa0f43f0cf56e03eed7f4194db0e421236010b72",
-                "reference": "fa0f43f0cf56e03eed7f4194db0e421236010b72",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/ea82cdc6ea1b7af058a0cdd1c207f99ec1c3dc7a",
+                "reference": "ea82cdc6ea1b7af058a0cdd1c207f99ec1c3dc7a",
                 "shasum": ""
             },
             "require": {
@@ -2859,7 +2859,7 @@
                 "inspection",
                 "php"
             ],
-            "time": "2020-07-02T04:22:14+00:00"
+            "time": "2020-07-02T05:11:46+00:00"
         },
         {
             "name": "webmozart/assert",
