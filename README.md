@@ -141,6 +141,19 @@ the same as the above command. Because the `build` service is used for tests,
 they will be run with its PHP version, which should correspond to your project's
 minimal requirements.
 
+#### Debugging
+The bootstrap includes xDebug in the `test` service of the Docker environment,
+and PHPStorm configuration. To use it, right click on any test or folder within
+the `tests` directory, and choose "Debug". This will run the tests with xDebug
+enabled. If you receive the error about [`xdebug.remote_host`][] being set
+incorrectly and suggesting to fix the error, fix it by setting that variable
+to [your machine's IP address][] on the local network in the window that
+pops up. After this, breakpoints in any code reachable by PHPUnit tests,
+including the code of tests themselves, will cause execution to pause,
+allowing inspection of code.
+
+At this time, inspection of code that runs _during a web request_ is not available.
+
 #### Database UI
 This bootstrap includes [phpMyAdmin][], which provides a GUI for your database.
 To start working with it, you must first bring up the related container,
@@ -174,3 +187,4 @@ provide assistance during coding.
 [`wordpress`]: https://hub.docker.com/_/wordpress
 [`docker-machine start`]: https://docs.docker.com/machine/reference/start/]
 [`docker-machine env`]: https://docs.docker.com/machine/reference/env/
+[`xdebug.remote_host`]: https://xdebug.org/docs/all_settings#remote_host
