@@ -24,6 +24,9 @@ Use this project as a starter for your modular WordPress plugin!
     * **[Psalm][]** - Inspects your code for problems.
     * **[PHPCS][]** - Checks your code style. [PHPCBF][] can fix some of them automatically.
     
+- **Continuous Integration** - Automatically verify that all contributions comply with
+    project standards with [GitHub Actions][].
+    
 ### Usage
 
 #### Getting Started
@@ -221,6 +224,7 @@ provide assistance during coding.
 [Psalm]: https://psalm.dev/
 [PHPCS]: https://github.com/squizlabs/PHP_CodeSniffer
 [PHPCBF]: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically
+[GitHub Actions]: https://github.com/features/actions
 [hosts file]: https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/
 [your machine's IP address]: https://www.whatismybrowser.com/detect/what-is-my-local-ip-address
 [composer integration]: https://www.jetbrains.com/help/phpstorm/using-the-composer-dependency-manager.html#updating-dependencies
