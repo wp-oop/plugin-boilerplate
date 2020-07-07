@@ -44,7 +44,7 @@ class ModularModule implements ModuleInterface
     /**
      * @inheritDoc
      */
-    public function run(ContainerInterface $c)
+    public function run(ContainerInterface $c): void
     {
         foreach ($this->modules as $module) {
             assert($module instanceof ModuleInterface);

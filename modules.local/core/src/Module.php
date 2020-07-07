@@ -30,7 +30,7 @@ class Module implements ModuleInterface
     /**
      * @inheritDoc
      */
-    public function run(ContainerInterface $c)
+    public function run(ContainerInterface $c): void
     {
         // Nothing to do
     }
