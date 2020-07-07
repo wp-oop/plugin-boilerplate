@@ -13,3 +13,12 @@
  * Text Domain: plugin
  * Domain Path: /languages
  */
+
+(function (string $mainFile): void {
+    $rootDir = dirname($mainFile);
+    $autoload = "$rootDir/vendor/composer/autoload.php";
+
+    if (file_exists($autoload)) {
+        require $autoload;
+    }
+})(__FILE__);
