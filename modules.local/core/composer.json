@@ -1,0 +1,27 @@
+{
+  "name": "me/plugin-core",
+  "description": "The core module of the plugin",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Anton Ukhanev",
+      "email": "xedin.unknown@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "wp-oop/wordpress-interface": "^0.1.0-alpha1",
+    "dhii/module-interface": "^0.2-alpha1",
+    "dhii/package-interface": "^0.1.0-alpha2",
+    "dhii/stringable-interface": "^0.1",
+    "dhii/versions": "^0.1.0-alpha1",
+    "dhii/containers": "^0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Me\\Plugin\\Core\\": "src"
+    }
+  }
+}

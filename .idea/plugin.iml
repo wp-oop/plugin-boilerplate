@@ -5,7 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="Me\Plugin\Test\" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="Me\Plugin\" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/functional" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/Func" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/amp" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/byte-stream" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
@@ -15,8 +15,12 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/data-container-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/exception-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/factory-interface" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/human-readable-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/module-interface" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/package-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/stringable-interface" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/validation-interface" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/versions" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/felixfbecker/advanced-json-rpc" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/felixfbecker/language-server-protocol" />
@@ -65,6 +69,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/glob" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/path-util" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/wikimedia/composer-merge-plugin" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/wp-oop/wordpress-interface" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -5,6 +5,7 @@ return function (string $rootDir, string $mainFile): iterable {
     $localModulesDir = "$rootDir/modules.local";
 
     $modules = [
+        (require "$localModulesDir/core/module.php")($rootDir, $mainFile),
     ];
 
     return $modules;

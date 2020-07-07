@@ -61,6 +61,12 @@
       <path value="$PROJECT_DIR$/vendor/dhii/containers" />
       <path value="$PROJECT_DIR$/vendor/dhii/data-container-interface" />
       <path value="$PROJECT_DIR$/vendor/container-interop/service-provider" />
+      <path value="$PROJECT_DIR$/vendor/wikimedia/composer-merge-plugin" />
+      <path value="$PROJECT_DIR$/vendor/dhii/validation-interface" />
+      <path value="$PROJECT_DIR$/vendor/dhii/package-interface" />
+      <path value="$PROJECT_DIR$/vendor/dhii/human-readable-interface" />
+      <path value="$PROJECT_DIR$/vendor/dhii/versions" />
+      <path value="$PROJECT_DIR$/vendor/wp-oop/wordpress-interface" />
     </include_path>
   </component>
   <component name="PhpInterpreters">

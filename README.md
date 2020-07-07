@@ -27,6 +27,9 @@ Use this project as a starter for your modular WordPress plugin!
 - **Continuous Integration** - Automatically verify that all contributions comply with
     project standards with [GitHub Actions][].
     
+- **Modularity** - Keep concerns separated into modules, which can be freely
+    moved out of the package at any time thanks to the [`composer-merge-plugin`][].
+    
 ### Usage
 
 #### Getting Started
@@ -102,6 +105,17 @@ Use Composer to bootstrap your project.
             the plugin _does_ actually require other plugins, but they should not be shipped with
             the plugin. Otherwise, completely Composer-managed WordPress installations will not
             automatically install other required plugins.
+
+    - Module `composer.json`:
+        This bootstrap uses the awesome [`composer-merge-plugin`][] to keep module depedencies
+        together with modules. This allows keeping track of which dependencies belong to which
+        modules, detect dependency incompatibilities, and moving modules out of the package
+        into packages of their own when necessary.
+        
+        Modules can be installed from other packages, or included in the package. In the latter
+        case, they should be added to the directory `modules.local`. One such module, the `core`
+        module of the plugin, is already included in the package. Its `composer.json` should
+        also be personalized, just like the `composer.json` of this package.
             
 3. Spin up the dev environment
     
@@ -139,6 +153,13 @@ docker-compose run --rm build composer update
 
 If you use PHPStorm, you can use the [composer integration][], as the project
 is already configured for this.
+
+If you have changed the `composer.json` of one of the local modules, the
+[`composer-merge-plugin`][] that is used to manage local module dependencies
+needs to be instructed to include module "sub-package" changes in the update.
+To do this, first run `composer update --lock` before running `composer update`.
+**Do not run `composer update` for the modules' `composer.json` file!**
+All Composer operations must be performed on the root package's `composer.json` file.
 
 Any changes to the project folder are immediately reflected in the dev environment,
 and this includes the `vendor` folder and `composer.lock` file. This is because
@@ -230,6 +251,7 @@ provide assistance during coding.
 [composer integration]: https://www.jetbrains.com/help/phpstorm/using-the-composer-dependency-manager.html#updating-dependencies
 [database integration]: https://www.jetbrains.com/help/phpstorm/configuring-database-connections.html
 [`container_name`]: https://docs.docker.com/compose/compose-file/#container_name
+[`composer-merge-plugin`]: https://github.com/wikimedia/composer-merge-plugin
 [`php`]: https://hub.docker.com/_/php
 [`wordpress`]: https://hub.docker.com/_/wordpress
 [`docker-machine start`]: https://docs.docker.com/machine/reference/start/]

@@ -21,4 +21,11 @@
     if (file_exists($autoload)) {
         require $autoload;
     }
+
+    add_action('plugins_loaded', function () use ($mainFile, $rootDir) {
+        $incDir = "$rootDir/inc";
+        $bootstrap = require "$incDir/bootstrap.php";
+
+        $bootstrap($mainFile, $rootDir);
+    });
 })(__FILE__);
