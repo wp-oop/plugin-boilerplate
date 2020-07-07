@@ -9,7 +9,14 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/amp" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/byte-stream" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/container-interop/service-provider" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dealerdirect/phpcodesniffer-composer-installer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/containers" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/data-container-interface" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/exception-interface" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/factory-interface" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/module-interface" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/stringable-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/felixfbecker/advanced-json-rpc" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/felixfbecker/language-server-protocol" />

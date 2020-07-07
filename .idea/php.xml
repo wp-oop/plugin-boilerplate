@@ -54,6 +54,13 @@
       <path value="$PROJECT_DIR$/vendor/slevomat/coding-standard" />
       <path value="$PROJECT_DIR$/vendor/dealerdirect/phpcodesniffer-composer-installer" />
       <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
+      <path value="$PROJECT_DIR$/vendor/dhii/module-interface" />
+      <path value="$PROJECT_DIR$/vendor/dhii/stringable-interface" />
+      <path value="$PROJECT_DIR$/vendor/dhii/exception-interface" />
+      <path value="$PROJECT_DIR$/vendor/dhii/factory-interface" />
+      <path value="$PROJECT_DIR$/vendor/dhii/containers" />
+      <path value="$PROJECT_DIR$/vendor/dhii/data-container-interface" />
+      <path value="$PROJECT_DIR$/vendor/container-interop/service-provider" />
     </include_path>
   </component>
   <component name="PhpInterpreters">

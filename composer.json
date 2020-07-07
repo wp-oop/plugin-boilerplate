@@ -11,7 +11,10 @@
     }
   ],
   "require": {
-    "php": "^7.1"
+    "php": "^7.1",
+    "dhii/module-interface": "^0.2",
+    "psr/container": "^1.0",
+    "dhii/containers": "^0.1"
   },
   "require-dev": {
     "phpunit/phpunit": "^7.0 | ^8.0",
