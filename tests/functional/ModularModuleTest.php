@@ -1,5 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
+namespace Me\Plugin\Test\Func;
+
 use Dhii\Container\DelegatingContainer;
 use Dhii\Modular\Module\ModuleInterface;
 use Interop\Container\ServiceProviderInterface;
