@@ -165,6 +165,55 @@ Any changes to the project folder are immediately reflected in the dev environme
 and this includes the `vendor` folder and `composer.lock` file. This is because
 the project's folder is mounted into the correct place in the WordPress container.
 
+#### Adding Modules
+This boilerplate promotes modularity, and supports [Dhii modules][] out of the box.
+Any such module that exposes a [`ModuleInterface`][] implementation can be loaded,
+allowing it to run in the application, and making its services available.
+
+The list of modules returned by `inc/modules.php` is the authoritative source
+of modules in the application. Because it is PHP code, modules can be loaded
+in any required way, including:
+
+- Simple instantiation of a module class that will be autoloaded.
+
+    If your module class is on one of the autoload paths registered with e.g. Composer,
+    you can just instantiate it as you would any other class. This is a
+    very quick and simple way to load some modules.
+
+
+- Usage of a factory class or file.
+
+    In order to make modules de-coupled from the application, but to still be able
+    to provide dependencies from the application to the module, it is sometimes
+    desirable to use a "padding" between the application and the module's
+    initialization. In this project, as well as in some others, we use a
+    `module.php` file. This file returns a function which, given some parameters
+    like the root project path, will return a `ModuleInterface` instance.
+    Another approach could be to use a named constructor, or even a dedicated
+    factory class.
+    
+- Scanning certain paths.
+
+    If modules do not conflict in any way, the module load order may be irrelevant.
+    In this case, it is possible to auto-discover modules by, for example, scanning
+    certain folders for some entrypoints or config files. Implement whatever
+    auto-discovery mechanism you wish, as long as the module instances
+    end up in the authoritative list.
+
+##### External Modules
+To add a module from another package, require that package with Composer
+and add the `ModuleInterface` instance to the list.
+
+##### Local Modules
+To add a local module, add the module to the `modules.local` folder,
+and do the same as for any other module. Local modules may also declare their own
+dependencies by adding a `composer.json` file to their root folder.
+These files will be picked up by Composer when updating dependencies in
+the project root, thanks to the [`composer-merge-plugin`][], provided
+that `composer update --lock` is run before `composer update`. This is
+a great way to separate module dependencies from other dependencies.
+Consult that Composer plugin's documentation for more information.
+
 #### Testing Code
 This bootstrap includes PHPUnit. It is already configured, and you can test
 that it's working by running the sample tests:
@@ -246,6 +295,7 @@ provide assistance during coding.
 [PHPCS]: https://github.com/squizlabs/PHP_CodeSniffer
 [PHPCBF]: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically
 [GitHub Actions]: https://github.com/features/actions
+[Dhii modules]: https://github.com/Dhii/module-interface
 [hosts file]: https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/
 [your machine's IP address]: https://www.whatismybrowser.com/detect/what-is-my-local-ip-address
 [composer integration]: https://www.jetbrains.com/help/phpstorm/using-the-composer-dependency-manager.html#updating-dependencies
@@ -257,3 +307,4 @@ provide assistance during coding.
 [`docker-machine start`]: https://docs.docker.com/machine/reference/start/]
 [`docker-machine env`]: https://docs.docker.com/machine/reference/env/
 [`xdebug.remote_host`]: https://xdebug.org/docs/all_settings#remote_host
+[`ModuleInterface`]: https://github.com/Dhii/module-interface/blob/develop/src/ModuleInterface.php
