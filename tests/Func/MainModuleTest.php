@@ -13,6 +13,7 @@ class MainModuleTest extends TestCase
     {
         $appContainer = $this->bootstrapModule();
         $this->assertInstanceOf(ContainerInterface::class, $appContainer);
+        $this->assertTrue($appContainer->has('me/plugin/plugin'));
         $this->assertFalse($appContainer->has(uniqid('non-existing-service')));
     }
 
