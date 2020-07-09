@@ -26,6 +26,6 @@
         $incDir = "$rootDir/inc";
         $bootstrap = require "$incDir/bootstrap.php";
 
-        $bootstrap($mainFile, $rootDir);
+        $appContainer = $bootstrap($mainFile, $rootDir);
     });
 })(__FILE__);
