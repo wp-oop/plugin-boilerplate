@@ -1,5 +1,5 @@
 {
-  "name": "me/plugin",
+  "name": "wp-oop/plugin-boilerplate",
   "description": "A project skeleton useful for starting a new WordPress plugin",
   "minimum-stability": "dev",
   "license": "GPL-2.0-or-later",
