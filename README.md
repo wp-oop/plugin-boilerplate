@@ -135,7 +135,7 @@ Use Composer to bootstrap your project.
    the value of `WP_DOMAIN` from the `.env` file. The IP would be Docker machine's IP
    address. On Linux, this is the same as [your machine's IP address][] on the local
    network, and usually `127.0.0.1` (localhost) works. If you are using Docker
-   Machine (in a non-Linux environment), use [`docker-machine ip`] to find it.
+   Machine (in a non-Linux environment), use `docker-machine ip` to find it.
    
    Now you should be able to visit that domain, and see the website. The admin username
    and password are both `admin` by default, and are determined by the `ADMIN_USER`
