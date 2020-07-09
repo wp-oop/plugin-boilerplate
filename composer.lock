@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ef280e58ea7cb46f0a6a29b5ac8bf14",
+    "content-hash": "7905bc395184339ed3d4662fd6cf4596",
     "packages": [
         {
             "name": "container-interop/service-provider",
@@ -3397,12 +3397,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "82a85791f2a86c14a6c438e44e0ff48ebed31084"
+                "reference": "0119cd09c11ea1630d4fe2c99f9b5c52d8063272"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/82a85791f2a86c14a6c438e44e0ff48ebed31084",
-                "reference": "82a85791f2a86c14a6c438e44e0ff48ebed31084",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/0119cd09c11ea1630d4fe2c99f9b5c52d8063272",
+                "reference": "0119cd09c11ea1630d4fe2c99f9b5c52d8063272",
                 "shasum": ""
             },
             "require": {
@@ -3486,24 +3486,24 @@
                 "inspection",
                 "php"
             ],
-            "time": "2020-07-07T13:31:43+00:00"
+            "time": "2020-07-08T21:42:51+00:00"
         },
         {
             "name": "webmozart/assert",
-            "version": "1.9.0",
+            "version": "1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozart/assert.git",
-                "reference": "9dc4f203e36f2b486149058bade43c851dd97451"
+                "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/9dc4f203e36f2b486149058bade43c851dd97451",
-                "reference": "9dc4f203e36f2b486149058bade43c851dd97451",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.3.3 || ^7.0",
+                "php": "^5.3.3 || ^7.0 || ^8.0",
                 "symfony/polyfill-ctype": "^1.8"
             },
             "conflict": {
@@ -3535,7 +3535,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2020-06-16T10:16:42+00:00"
+            "time": "2020-07-08T17:02:28+00:00"
         },
         {
             "name": "webmozart/glob",

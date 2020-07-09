@@ -38,6 +38,9 @@
       "include": [
         "modules.local/*/composer.json"
       ]
+    },
+    "branch-alias": {
+      "dev-initial": "0.1.x-dev"
     }
   }
 }
