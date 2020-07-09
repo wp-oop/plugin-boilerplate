@@ -143,7 +143,7 @@ Use Composer to bootstrap your project.
    installed and active, and no other plugins should be installed. If this is not
    the case, inspect the output you got from `docker-compose up`.
 
-#### Updating dependencies
+#### Updating Dependencies
 Composer is installed into the `build` service's image. To run composer commands,
 use `docker-compose run`. For example, to update dependencies you can run the following:
 
