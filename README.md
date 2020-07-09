@@ -247,7 +247,7 @@ To start working with it, you must first bring up the related container,
 as it is not brought up together with the dev environment:
 
 ```bash
-docker-compose up
+docker-compose up db_admin
 ```
 
 You can now head over to the application's domain, defined usually by the
