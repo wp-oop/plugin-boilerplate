@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="WordPress Application">
+    <serverData>
+      <paths name="WordPress Application">
+        <serverdata>
+          <mappings>
+            <mapping deploy="wp-content/plugins/plugin" local="$PROJECT_DIR$" web="/wp-content/plugins/plugin" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
