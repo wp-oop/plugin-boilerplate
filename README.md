@@ -148,16 +148,17 @@ Composer is installed into the `build` service's image. To run composer commands
 use `docker-compose run`. For example, to update dependencies you can run the following:
 
 ```bash
-docker-compose run --rm build composer update 
+docker-compose run --rm build composer update
 ```
 
-If you use PHPStorm, you can use the [composer integration][], as the project
-is already configured for this.
+~~If you use PHPStorm, you can use the [composer integration][], as the project
+is already configured for this.~~
 
-If you have changed the `composer.json` of one of the local modules, the
-[`composer-merge-plugin`][] that is used to manage local module dependencies
-needs to be instructed to include module "sub-package" changes in the update.
-To do this, first run `composer update --lock` before running `composer update`.
+Currently, it is not possible to use PHPStorm's [composer integration][] because
+managing local modules with the [`composer-merge-plugin`][] require running
+`composer update --lock` instead of simply `composer update`. This is currently
+unsupported by PHPStorm, but a [feature request][WI-54242] has been submitted. 
+
 **Do not run `composer update` for the modules' `composer.json` file!**
 All Composer operations must be performed on the root package's `composer.json` file.
 
@@ -308,3 +309,4 @@ provide assistance during coding.
 [`docker-machine env`]: https://docs.docker.com/machine/reference/env/
 [`xdebug.remote_host`]: https://xdebug.org/docs/all_settings#remote_host
 [`ModuleInterface`]: https://github.com/Dhii/module-interface/blob/develop/src/ModuleInterface.php
+[WI-54242]: https://youtrack.jetbrains.com/issue/WI-54242
