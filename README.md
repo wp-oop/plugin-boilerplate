@@ -1,5 +1,5 @@
-# WP-OOP - Plugin
-A skeleton for starting WordPress plugins quickly.
+# WP-OOP - Plugin Boilerplate
+A boilerplate for starting WordPress plugins quickly.
 
 ## Details
 Use this project as a starter for your modular WordPress plugin!
