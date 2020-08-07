@@ -1,5 +1,5 @@
-# WP-OOP - Plugin
-A skeleton for starting WordPress plugins quickly.
+# WP-OOP - Plugin Boilerplate
+A boilerplate for starting WordPress plugins quickly.
 
 ## Details
 Use this project as a starter for your modular WordPress plugin!
@@ -38,7 +38,7 @@ Use Composer to bootstrap your project.
 1. Clone and install deps:
 
     ```bash
-    composer create-project wp-oop/plugin my_plugin
+    composer create-project wp-oop/plugin-boilerplate my_plugin
     ```
    
    Here, `my_plugin` is the name of the project folder. Should correspond
