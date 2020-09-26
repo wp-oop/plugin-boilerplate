@@ -4,7 +4,7 @@ A boilerplate for starting WordPress plugins quickly.
 ## Details
 Use this project as a starter for your modular WordPress plugin!
 
-### Feaures
+### Features
 - **Docker** - Develop and test your plugin with Docker. Use an environment
     tailored for your plugin. See changes instantly in the browser. Build
     a Docker image containing a complete WordPress installation with your
