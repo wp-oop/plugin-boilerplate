@@ -38,7 +38,7 @@ Use Composer to bootstrap your project.
 1. Clone and install deps:
 
     ```bash
-    composer create-project wp-oop/plugin-boilerplate my_plugin
+    composer create-project wp-oop/plugin-boilerplate my_plugin --stability=dev
     ```
    
    Here, `my_plugin` is the name of the project folder. Should correspond
