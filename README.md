@@ -142,6 +142,13 @@ Use Composer to bootstrap your project.
    and `ADMIN_PASS` variables from the `.env` file. Your plugin should already be
    installed and active, and no other plugins should be installed. If this is not
    the case, inspect the output you got from `docker-compose up`.
+   
+   If you use PHPStorm integrations that involve Docker, such as Composer,
+   you maybe receive the error "Docker account not found". This is because, for some reason,
+   PHPStorm requires the same name of the Docker deployment configuration to be used in all
+   projects, and there currently does not seem to be a way to commit that to the VCS.
+   Because of this, you are required to create a Docker deployment yourself. Simply go to
+   _Project Settings_ > _Docker_ and create a configuration named precisely "Docker Machine".
 
 #### Updating Dependencies
 Composer is installed into the `build` service's image. To run composer commands,
