@@ -240,6 +240,16 @@ pops up. After this, breakpoints in any code reachable by PHPUnit tests,
 including the code of tests themselves, will cause execution to pause,
 allowing inspection of code.
 
+If you change the PHP version of the `test` service, the debugger will stop working.
+This is because different PHP versions use different versions of xDebug, and
+because the path to the xDebug extension depends on its version, that path will
+also change, invalidating the currently configured path.
+To fix this, the "Debugger extension" fields in the interpreter settings screen
+needs to be updated. You can run `docker-compose run test ls -lah /usr/local/lib/php/extensions`
+to see the list of extensions. One of them should say someting like
+`no-debug-non-zts-20170718`. Change the corresponding part of the "Debugger extension"
+path value to that string.
+
 At this time, inspection of code that runs _during a web request_ is not available.
 
 #### Database UI
