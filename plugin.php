@@ -16,7 +16,7 @@
 
 (function (string $mainFile): void {
     $rootDir = dirname($mainFile);
-    $autoload = "$rootDir/vendor/composer/autoload.php";
+    $autoload = "$rootDir/vendor/autoload.php";
 
     if (file_exists($autoload)) {
         require $autoload;
