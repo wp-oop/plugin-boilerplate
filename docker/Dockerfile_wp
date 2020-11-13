@@ -22,7 +22,7 @@ FROM php:${PHP_TEST_VERSION}-cli as test
 ARG BUILD_ROOT_PATH
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
-RUN pecl install xdebug-2.6.0
+RUN pecl install xdebug-2.9.8
 RUN docker-php-ext-install pcntl
 RUN docker-php-ext-install posix
 
