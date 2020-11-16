@@ -33,11 +33,8 @@
     </projectFiles>
 
     <extraFiles>
-        <ignoreFiles>
-            <directory name="vendor/phpunit/php-code-coverage/tests"/>
-            <directory name="vendor/phpspec/prophecy"/>
-        </ignoreFiles>
-        <directory name="vendor" />
+        <directory name="vendor/johnpbloch/wordpress-core/wp-includes" />
+        <directory name="vendor/johnpbloch/wordpress-core/wp-admin/includes" />
     </extraFiles>
 
 
