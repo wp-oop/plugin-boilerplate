@@ -27,7 +27,7 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
 - **Continuous Integration** - Automatically verify that all contributions comply with
     project standards with [GitHub Actions][].
     
-- **Modularity** - Keep concerns separated into modules, which can be freely
+- **Modularity** - Keep concerns separated into [modules][modularity], which can be freely
     moved out of the package at any time thanks to the [`composer-merge-plugin`][].
     
 ### Usage
