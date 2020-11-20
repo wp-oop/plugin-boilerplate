@@ -2,7 +2,7 @@
 A boilerplate for starting WordPress plugins quickly.
 
 ## Details
-Use this project as a starter for your modular WordPress plugin!
+Use this project as a starter for your [modular][modularity] WordPress plugin!
 
 ### Features
 - **Docker** - Develop and test your plugin with Docker. Use an environment
@@ -196,7 +196,7 @@ in any required way, including:
     desirable to use a "padding" between the application and the module's
     initialization. In this project, as well as in some others, we use a
     `module.php` file. This file returns a function which, given some parameters
-    like the root project path, will return a `ModuleInterface` instance.
+    like the root project path, will return a [`ModuleInterface`][] instance.
     Another approach could be to use a named constructor, or even a dedicated
     factory class.
     
@@ -303,7 +303,8 @@ provide assistance during coding.
     
     Will also be run automatically on CI.
 
-        
+
+[modularity]: https://dev.to/xedinunknown/cross-platform-modularity-in-php-30bo
 [Docker Machine]: https://github.com/docker/machine
 [WP-CLI]: https://wp-cli.org/
 [phpMyAdmin]: https://www.phpmyadmin.net/
