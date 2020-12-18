@@ -4,7 +4,7 @@ use Dhii\Container\ServiceProvider;
 use Dhii\Modular\Module\ModuleInterface;
 use Me\Plugin\Core\Module;
 
-return function (string $mainFile): ModuleInterface {
+return function (string $rootDir, string $mainFile): ModuleInterface {
     $rootDir = dirname($mainFile);
     $moduleDir = dirname(__FILE__);
     $moduleIncDir = "$moduleDir/inc";
