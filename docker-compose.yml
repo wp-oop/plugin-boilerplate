@@ -8,6 +8,7 @@ services:
       args:
         PHP_BUILD_VERSION: $PHP_BUILD_VERSION
         PHP_TEST_VERSION: $PHP_TEST_VERSION
+        WORDPRESS_VERSION: $WORDPRESS_VERSION
         PROJECT_MOUNT_PATH: $PROJECT_MOUNT_PATH
         BUILD_ROOT_PATH: $BUILD_ROOT_PATH
         DOCROOT_PATH: $DOCROOT_PATH
@@ -69,6 +70,7 @@ services:
       target: build
       args:
         PHP_BUILD_VERSION: $PHP_BUILD_VERSION
+        WORDPRESS_VERSION: $WORDPRESS_VERSION
         BUILD_ROOT_PATH: $BUILD_ROOT_PATH
     container_name: "${PROJECT_NAME}_build"
     working_dir: ${BUILD_ROOT_PATH}
@@ -84,6 +86,7 @@ services:
         BUILD_ROOT_PATH: $BUILD_ROOT_PATH
         PHP_BUILD_VERSION: $PHP_BUILD_VERSION
         PHP_TEST_VERSION: $PHP_TEST_VERSION
+        WORDPRESS_VERSION: $WORDPRESS_VERSION
     container_name: "${PROJECT_NAME}_test"
     working_dir: ${BUILD_ROOT_PATH}
     volumes:
