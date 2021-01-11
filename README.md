@@ -65,6 +65,8 @@ Use Composer to bootstrap your project.
         * `PHP_TEST_VERSION`* - The version of PHP, on which the plugin will be _run_. This should
             correspond to the maximal PHP requirement of your plugin. Used to determine the tag of
             the [`wordpress`][] image.
+        * `WORDPRESS_VERSION`* - The version of WordPress, on which the plugin will be _run_. Used to determine the tag of
+            the [`wordpress`][] image.
         * `DB_USER_PASSWORD`* - This and other `DB_*` variables are used to determine the password
             to the WordPress database. Change these if you want to secure your deployed application.
         * `WP_DOMAIN`* - The domain name of the WordPress application, which contains your plugin.

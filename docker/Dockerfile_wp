@@ -1,5 +1,6 @@
 ARG PHP_BUILD_VERSION
 ARG PHP_TEST_VERSION
+ARG WORDPRESS_VERSION
 
 # Composer on correct PHP version
 FROM php:${PHP_BUILD_VERSION}-cli as build
@@ -40,7 +41,7 @@ RUN composer install
 
 
 # WordPress for development
-FROM wordpress:5-php${PHP_TEST_VERSION}-apache as dev
+FROM wordpress:${WORDPRESS_VERSION}-php${PHP_TEST_VERSION}-apache as dev
 
 ARG PROJECT_MOUNT_PATH
 ARG BUILD_ROOT_PATH
