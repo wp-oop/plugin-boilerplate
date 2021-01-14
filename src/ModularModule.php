@@ -34,7 +34,6 @@ class ModularModule implements ModuleInterface
     {
         $providers = [];
         foreach ($this->modules as $module) {
-            assert($module instanceof ModuleInterface);
             $providers[] = $module->setup();
         }
 
@@ -47,7 +46,6 @@ class ModularModule implements ModuleInterface
     public function run(ContainerInterface $c): void
     {
         foreach ($this->modules as $module) {
-            assert($module instanceof ModuleInterface);
             $module->run($c);
         }
     }
