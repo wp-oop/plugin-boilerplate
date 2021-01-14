@@ -43,22 +43,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/collections-interface.git",
-                "reference": "0fa5a14c407995cb0b9634ee42f127a91f24aafc"
+                "reference": "7c7c4b4459dda9e6db406860d99916d0cee58ccf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/collections-interface/zipball/0fa5a14c407995cb0b9634ee42f127a91f24aafc",
-                "reference": "0fa5a14c407995cb0b9634ee42f127a91f24aafc",
+                "url": "https://api.github.com/repos/Dhii/collections-interface/zipball/7c7c4b4459dda9e6db406860d99916d0cee58ccf",
+                "reference": "7c7c4b4459dda9e6db406860d99916d0cee58ccf",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1",
+                "php": "^7.1 | ^8.0",
                 "psr/container": "^1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7.0 | ^8.0",
+                "phpunit/phpunit": "^7.0 | ^8.0 | ^9.0",
                 "slevomat/coding-standard": "^6.0",
-                "vimeo/psalm": "^3.0"
+                "vimeo/psalm": "^3.11.7 | ^4.0"
             },
             "type": "library",
             "extra": {
@@ -86,7 +86,7 @@
                 }
             ],
             "description": "A highly ISP-compliant collection of interfaces that represent maps and lists.",
-            "time": "2020-10-13T08:27:37+00:00"
+            "time": "2021-01-14T17:33:46+00:00"
         },
         {
             "name": "dhii/containers",
