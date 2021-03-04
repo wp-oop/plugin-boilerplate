@@ -32,4 +32,4 @@ jobs:
       run: ./vendor/bin/psalm --show-info=false --threads=8 --diff --diff-methods
 
     - name: PHPCS
-      run: ./vendor/bin/phpcs -s --report-source --runtime-set ignore_warnings_on_exit 1
+      run: ./vendor/bin/phpcs -s --runtime-set ignore_warnings_on_exit 1
