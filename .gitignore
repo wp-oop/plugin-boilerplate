@@ -5,3 +5,5 @@
 /.idea/inspectionProfiles/
 /.idea/misc.xml
 /.env
+
+.phpunit.result.cache
