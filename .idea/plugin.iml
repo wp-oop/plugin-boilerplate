@@ -11,9 +11,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/container-interop/service-provider" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dealerdirect/phpcodesniffer-composer-installer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/containers" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/data-container-interface" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/exception-interface" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/factory-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/human-readable-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/module-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/package-interface" />
@@ -27,7 +24,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/netresearch/jsonmapper" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/ocramius/package-versions" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/openlss/lib-array2xml" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phar-io/manifest" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phar-io/version" />
@@ -66,10 +62,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/theseer/tokenizer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/vimeo/psalm" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/glob" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/path-util" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/wikimedia/composer-merge-plugin" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/wp-oop/wordpress-interface" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/collections-interface" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
