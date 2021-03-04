@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
 
-## [0.1.0-alpha1] - 2021-04-03
+## [0.1.0-alpha2] - 2021-04-03
 ### Added
 - Using a caching container to cache services.
 
