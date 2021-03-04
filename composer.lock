@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c7b4e337855ef5b1e0b690adc56b9ac",
+    "content-hash": "0ebe558861417d2cb8798ad28effd19e",
     "packages": [
         {
             "name": "container-interop/service-provider",
@@ -201,12 +201,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/module-interface.git",
-                "reference": "cb2eaaac0fa4bd4a82bc2b38c10e3a794ce32d52"
+                "reference": "97a9a657a606216903af48b0f8b99a8c8ca99014"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/module-interface/zipball/cb2eaaac0fa4bd4a82bc2b38c10e3a794ce32d52",
-                "reference": "cb2eaaac0fa4bd4a82bc2b38c10e3a794ce32d52",
+                "url": "https://api.github.com/repos/Dhii/module-interface/zipball/97a9a657a606216903af48b0f8b99a8c8ca99014",
+                "reference": "97a9a657a606216903af48b0f8b99a8c8ca99014",
                 "shasum": ""
             },
             "require": {
@@ -215,12 +215,14 @@
                 "psr/container": "^1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.0 | ^7.0"
+                "phpunit/phpunit": "^7.0 | ^8.0 | ^9.0",
+                "slevomat/coding-standard": "^6.0",
+                "vimeo/psalm": "^3.11.7 | ^4.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-develop": "0.2.x-dev"
+                    "dev-develop": "0.3.x-dev"
                 }
             },
             "autoload": {
@@ -239,7 +241,7 @@
                 }
             ],
             "description": "Interfaces for modules",
-            "time": "2020-04-10T14:27:05+00:00"
+            "time": "2021-01-15T11:08:46+00:00"
         },
         {
             "name": "dhii/package-interface",
@@ -993,159 +995,6 @@
                 "tests"
             ],
             "time": "2020-12-07T18:04:37+00:00"
-        },
-        {
-            "name": "dhii/data-container-interface",
-            "version": "dev-develop",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Dhii/data-container-interface.git",
-                "reference": "f3b36758e236784a8c70c34e149f26982b2539d7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/data-container-interface/zipball/f3b36758e236784a8c70c34e149f26982b2539d7",
-                "reference": "f3b36758e236784a8c70c34e149f26982b2539d7",
-                "shasum": ""
-            },
-            "require": {
-                "dhii/exception-interface": "^0.1 | ^0.2",
-                "dhii/factory-interface": "^0.1-alpha1",
-                "php": "^5.3 | ^7.0",
-                "psr/container": "^1.0"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "<=0.3.2",
-                "dhii/php-cs-fixer-config": "dev-php-5.3",
-                "dhii/stringable-interface": "^0.1",
-                "phpunit/phpunit": "^4.8",
-                "ptrofimov/xpmock": "^1.1"
-            },
-            "suggest": {
-                "dhii/stringable-interface": "To be able to pass Stringables as keys"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "0.2.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Dhii\\Data\\Container\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dhii Team",
-                    "email": "development@dhii.co"
-                }
-            ],
-            "description": "Interfaces for working with data containers",
-            "abandoned": "dhii/collections-interface",
-            "time": "2020-03-11T12:42:43+00:00"
-        },
-        {
-            "name": "dhii/exception-interface",
-            "version": "v0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Dhii/exception-interface.git",
-                "reference": "b69feebf7cb2879cd43977a03342e2393b73f7fb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/exception-interface/zipball/b69feebf7cb2879cd43977a03342e2393b73f7fb",
-                "reference": "b69feebf7cb2879cd43977a03342e2393b73f7fb",
-                "shasum": ""
-            },
-            "require": {
-                "dhii/stringable-interface": "^0.1",
-                "php": "^5.3 | ^7.0"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "<=0.3.2",
-                "dhii/php-cs-fixer-config": "dev-php-5.3",
-                "phpunit/phpunit": "^4.8",
-                "ptrofimov/xpmock": "^1.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "0.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Dhii\\Exception\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dhii Team",
-                    "email": "development@dhii.co"
-                }
-            ],
-            "description": "Interfaces for most common exceptions",
-            "time": "2018-08-29T10:42:04+00:00"
-        },
-        {
-            "name": "dhii/factory-interface",
-            "version": "v0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Dhii/factory-interface.git",
-                "reference": "b8d217aec8838e64ccaa770cb03dc164bf6f0515"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/factory-interface/zipball/b8d217aec8838e64ccaa770cb03dc164bf6f0515",
-                "reference": "b8d217aec8838e64ccaa770cb03dc164bf6f0515",
-                "shasum": ""
-            },
-            "require": {
-                "dhii/exception-interface": "^0.1|^0.2",
-                "php": "^5.3 | ^7.0"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "<=0.3.2",
-                "dhii/php-cs-fixer-config": "dev-php-5.3",
-                "dhii/stringable-interface": "^0.1",
-                "phpunit/phpunit": "^4.8",
-                "psr/container": "^1.0",
-                "ptrofimov/xpmock": "^1.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "0.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Dhii\\Factory\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dhii Team",
-                    "email": "development@dhii.co"
-                }
-            ],
-            "description": "Interfaces for working with factories.",
-            "time": "2018-08-29T11:15:09+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -3683,12 +3532,12 @@
             "version": "1.9.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webmozart/assert.git",
+                "url": "https://github.com/webmozarts/assert.git",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "shasum": ""
             },

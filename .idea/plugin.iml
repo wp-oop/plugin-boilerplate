@@ -11,9 +11,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/container-interop/service-provider" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dealerdirect/phpcodesniffer-composer-installer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/containers" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/data-container-interface" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/exception-interface" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/factory-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/human-readable-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/module-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/package-interface" />

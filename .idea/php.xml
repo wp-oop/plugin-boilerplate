@@ -54,10 +54,7 @@
       <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
       <path value="$PROJECT_DIR$/vendor/dhii/module-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/stringable-interface" />
-      <path value="$PROJECT_DIR$/vendor/dhii/exception-interface" />
-      <path value="$PROJECT_DIR$/vendor/dhii/factory-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/containers" />
-      <path value="$PROJECT_DIR$/vendor/dhii/data-container-interface" />
       <path value="$PROJECT_DIR$/vendor/container-interop/service-provider" />
       <path value="$PROJECT_DIR$/vendor/wikimedia/composer-merge-plugin" />
       <path value="$PROJECT_DIR$/vendor/dhii/validation-interface" />
