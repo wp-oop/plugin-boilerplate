@@ -33,9 +33,7 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/vendor/johnpbloch/wordpress-core" />
       <path value="$PROJECT_DIR$/vendor/vimeo/psalm" />
-      <path value="$PROJECT_DIR$/vendor/ocramius/package-versions" />
       <path value="$PROJECT_DIR$/vendor/webmozart/path-util" />
-      <path value="$PROJECT_DIR$/vendor/webmozart/glob" />
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/psr/container" />
       <path value="$PROJECT_DIR$/vendor/felixfbecker/advanced-json-rpc" />
@@ -67,6 +65,8 @@
       <path value="$PROJECT_DIR$/vendor/dhii/human-readable-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/versions" />
       <path value="$PROJECT_DIR$/vendor/wp-oop/wordpress-interface" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/dhii/collections-interface" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
