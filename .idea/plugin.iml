@@ -67,6 +67,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/validation-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/package-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/versions" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/type" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

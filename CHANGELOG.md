@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [[*next-version*]] - YYYY-MM-DD
 ### Added
 - Now supports PHP 8, including newer tool versions (#15).
+- Now using Composer v2.
 
 ### Removed
 - Dropped support for PHP 7.2 (#15).
