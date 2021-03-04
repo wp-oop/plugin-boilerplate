@@ -1,5 +1,6 @@
 <?php
 
+use Dhii\Container\CachingContainer;
 use Dhii\Container\CompositeContainer;
 use Dhii\Container\DelegatingContainer;
 use Dhii\Container\ProxyContainer;
@@ -13,9 +14,9 @@ return function (string $rootDir, string $mainFile): ContainerInterface {
 
     $proxyContainer = new ProxyContainer();
     $container = new DelegatingContainer($provider, $proxyContainer);
-    $appContainer = new CompositeContainer([
+    $appContainer = new CachingContainer(new CompositeContainer([
         $container
-    ]);
+    ]));
     $proxyContainer->setInnerContainer($appContainer);
 
     $module->run($appContainer);
