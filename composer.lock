@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "82df35f015e068724ce19de34005a984",
+    "content-hash": "b3e83b31ec135c6c7ee15a200ade6f92",
     "packages": [
         {
             "name": "container-interop/service-provider",
@@ -94,12 +94,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/containers.git",
-                "reference": "f7279f4875a4ada41129a0d8eca411634c2484b9"
+                "reference": "87b3306832cc7d74d3c5b44cc6774391f1ac4608"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/containers/zipball/f7279f4875a4ada41129a0d8eca411634c2484b9",
-                "reference": "f7279f4875a4ada41129a0d8eca411634c2484b9",
+                "url": "https://api.github.com/repos/Dhii/containers/zipball/87b3306832cc7d74d3c5b44cc6774391f1ac4608",
+                "reference": "87b3306832cc7d74d3c5b44cc6774391f1ac4608",
                 "shasum": ""
             },
             "require": {
@@ -109,10 +109,11 @@
             },
             "require-dev": {
                 "gmazzap/andrew": "^1.1",
-                "phpunit/phpunit": "^7.0",
+                "phpunit/phpunit": "^7.0 | ^8.0 | ^9.0",
                 "psr/container": "^1.0",
                 "psr/simple-cache": "^1.0",
-                "slevomat/coding-standard": "~4.0",
+                "slevomat/coding-standard": "^6.0",
+                "vimeo/psalm": "^3.11.7 | ^4.0",
                 "wildwolf/psr-memory-cache": "^1.0"
             },
             "type": "library",
@@ -141,7 +142,7 @@
                 "PSR-11",
                 "container"
             ],
-            "time": "2020-10-23T16:08:40+00:00"
+            "time": "2021-02-02T16:39:47+00:00"
         },
         {
             "name": "dhii/human-readable-interface",
@@ -200,26 +201,28 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/module-interface.git",
-                "reference": "cb2eaaac0fa4bd4a82bc2b38c10e3a794ce32d52"
+                "reference": "97a9a657a606216903af48b0f8b99a8c8ca99014"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/module-interface/zipball/cb2eaaac0fa4bd4a82bc2b38c10e3a794ce32d52",
-                "reference": "cb2eaaac0fa4bd4a82bc2b38c10e3a794ce32d52",
+                "url": "https://api.github.com/repos/Dhii/module-interface/zipball/97a9a657a606216903af48b0f8b99a8c8ca99014",
+                "reference": "97a9a657a606216903af48b0f8b99a8c8ca99014",
                 "shasum": ""
             },
             "require": {
                 "container-interop/service-provider": "^0.4",
-                "php": "^7.1",
+                "php": "^7.1 | ^8.0",
                 "psr/container": "^1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.0 | ^7.0"
+                "phpunit/phpunit": "^7.0 | ^8.0 | ^9.0",
+                "slevomat/coding-standard": "^6.0",
+                "vimeo/psalm": "^3.11.7 | ^4.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-develop": "0.2.x-dev"
+                    "dev-develop": "0.3.x-dev"
                 }
             },
             "autoload": {
@@ -238,7 +241,7 @@
                 }
             ],
             "description": "Interfaces for modules",
-            "time": "2020-04-10T14:27:05+00:00"
+            "time": "2021-01-15T11:08:46+00:00"
         },
         {
             "name": "dhii/package-interface",
@@ -795,29 +798,29 @@
         },
         {
             "name": "composer/semver",
-            "version": "dev-main",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "dd61cb4efbd0cff1700b217faf24ce596af4fc4e"
+                "reference": "00915994bb1de62e750ae279669c9c5a57379957"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/dd61cb4efbd0cff1700b217faf24ce596af4fc4e",
-                "reference": "dd61cb4efbd0cff1700b217faf24ce596af4fc4e",
+                "url": "https://api.github.com/repos/composer/semver/zipball/00915994bb1de62e750ae279669c9c5a57379957",
+                "reference": "00915994bb1de62e750ae279669c9c5a57379957",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.3.2 || ^7.0 || ^8.0"
             },
             "require-dev": {
-                "phpstan/phpstan": "^0.12.54",
+                "phpstan/phpstan": "^0.12.19",
                 "symfony/phpunit-bridge": "^4.2 || ^5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "3.x-dev"
+                    "dev-master": "3.x-dev"
                 }
             },
             "autoload": {
@@ -867,7 +870,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-12-10T07:55:43+00:00"
+            "time": "2020-05-31T11:44:06+00:00"
         },
         {
             "name": "composer/xdebug-handler",
@@ -1138,12 +1141,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/felixfbecker/php-language-server-protocol.git",
-                "reference": "85e83cacd2ed573238678c6875f8f0d7ec699541"
+                "reference": "9d846d1f5cf101deee7a61c8ba7caa0a975cd730"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/felixfbecker/php-language-server-protocol/zipball/85e83cacd2ed573238678c6875f8f0d7ec699541",
-                "reference": "85e83cacd2ed573238678c6875f8f0d7ec699541",
+                "url": "https://api.github.com/repos/felixfbecker/php-language-server-protocol/zipball/9d846d1f5cf101deee7a61c8ba7caa0a975cd730",
+                "reference": "9d846d1f5cf101deee7a61c8ba7caa0a975cd730",
                 "shasum": ""
             },
             "require": {
@@ -1182,20 +1185,20 @@
                 "php",
                 "server"
             ],
-            "time": "2020-10-23T13:55:30+00:00"
+            "time": "2021-02-22T14:02:09+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "5.6.0",
+            "version": "5.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "f074617dd69f466302836d1ae5de75c0bd7b6dfd"
+                "reference": "e48e723c0d7e38c5580631e6ffea29a4388c5dd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/f074617dd69f466302836d1ae5de75c0bd7b6dfd",
-                "reference": "f074617dd69f466302836d1ae5de75c0bd7b6dfd",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/e48e723c0d7e38c5580631e6ffea29a4388c5dd0",
+                "reference": "e48e723c0d7e38c5580631e6ffea29a4388c5dd0",
                 "shasum": ""
             },
             "require": {
@@ -1203,7 +1206,7 @@
                 "php": ">=5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "5.6.0"
+                "wordpress/core-implementation": "5.6.2"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -1223,7 +1226,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2020-12-08T22:34:23+00:00"
+            "time": "2021-02-22T15:30:31+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -1738,16 +1741,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "0.4.10",
+            "version": "0.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "5c1eb9aac80cb236f1b7fbe52e691afe4cc9f430"
+                "reference": "2e17e4a90702d8b7ead58f4e08478a8e819ba6b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/5c1eb9aac80cb236f1b7fbe52e691afe4cc9f430",
-                "reference": "5c1eb9aac80cb236f1b7fbe52e691afe4cc9f430",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/2e17e4a90702d8b7ead58f4e08478a8e819ba6b8",
+                "reference": "2e17e4a90702d8b7ead58f4e08478a8e819ba6b8",
                 "shasum": ""
             },
             "require": {
@@ -1760,7 +1763,7 @@
                 "phpstan/phpstan": "^0.12.60",
                 "phpstan/phpstan-strict-rules": "^0.12.5",
                 "phpunit/phpunit": "^7.5.20",
-                "symfony/process": "^4.0"
+                "symfony/process": "^5.2"
             },
             "type": "library",
             "extra": {
@@ -1780,7 +1783,7 @@
                 "MIT"
             ],
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
-            "time": "2020-12-12T15:45:28+00:00"
+            "time": "2021-02-28T14:30:10+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -2143,12 +2146,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "dd738d0b4491f32725492cf345f6b501f5922fec"
+                "reference": "a18c1e692e02b84abbafe4856c3cd7cc6903908c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/dd738d0b4491f32725492cf345f6b501f5922fec",
-                "reference": "dd738d0b4491f32725492cf345f6b501f5922fec",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/a18c1e692e02b84abbafe4856c3cd7cc6903908c",
+                "reference": "a18c1e692e02b84abbafe4856c3cd7cc6903908c",
                 "shasum": ""
             },
             "require": {
@@ -2182,7 +2185,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2020-09-18T06:44:51+00:00"
+            "time": "2021-03-02T15:02:34+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -2810,28 +2813,28 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/slevomat/coding-standard.git",
-                "reference": "059efe34aac90043a289f1a4f713ae80490a35f7"
+                "reference": "a3e37268f8ed9f1cd2f74b876996cb2e91f3e1c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/059efe34aac90043a289f1a4f713ae80490a35f7",
-                "reference": "059efe34aac90043a289f1a4f713ae80490a35f7",
+                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/a3e37268f8ed9f1cd2f74b876996cb2e91f3e1c4",
+                "reference": "a3e37268f8ed9f1cd2f74b876996cb2e91f3e1c4",
                 "shasum": ""
             },
             "require": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2 || ^0.7",
                 "php": "^7.1 || ^8.0",
-                "phpstan/phpdoc-parser": "0.4.5 - 0.4.10",
+                "phpstan/phpdoc-parser": "0.4.12",
                 "squizlabs/php_codesniffer": "dev-master"
             },
             "require-dev": {
-                "phing/phing": "2.16.3",
+                "phing/phing": "2.16.4",
                 "php-parallel-lint/php-parallel-lint": "1.2.0",
-                "phpstan/phpstan": "0.12.66",
+                "phpstan/phpstan": "0.12.80",
                 "phpstan/phpstan-deprecation-rules": "0.12.6",
                 "phpstan/phpstan-phpunit": "0.12.17",
                 "phpstan/phpstan-strict-rules": "0.12.9",
-                "phpunit/phpunit": "7.5.20|8.5.5|9.5.0"
+                "phpunit/phpunit": "7.5.20|8.5.5|9.5.2"
             },
             "type": "phpcodesniffer-standard",
             "extra": {
@@ -2859,7 +2862,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-13T14:16:06+00:00"
+            "time": "2021-03-04T08:19:17+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -2867,12 +2870,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "59d4c8d3990274f341f1d8cfc691c5d22751c69a"
+                "reference": "1106d65547e581a5184a9293486d9e6d81595462"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/59d4c8d3990274f341f1d8cfc691c5d22751c69a",
-                "reference": "59d4c8d3990274f341f1d8cfc691c5d22751c69a",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/1106d65547e581a5184a9293486d9e6d81595462",
+                "reference": "1106d65547e581a5184a9293486d9e6d81595462",
                 "shasum": ""
             },
             "require": {
@@ -2910,7 +2913,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2021-01-14T04:41:46+00:00"
+            "time": "2021-02-24T21:40:47+00:00"
         },
         {
             "name": "symfony/console",
@@ -2918,12 +2921,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "adb658b43abb668be457c1adb0e472c842dea6af"
+                "reference": "c98349bda966c70d6c08b4cd8658377c94166492"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/adb658b43abb668be457c1adb0e472c842dea6af",
-                "reference": "adb658b43abb668be457c1adb0e472c842dea6af",
+                "url": "https://api.github.com/repos/symfony/console/zipball/c98349bda966c70d6c08b4cd8658377c94166492",
+                "reference": "c98349bda966c70d6c08b4cd8658377c94166492",
                 "shasum": ""
             },
             "require": {
@@ -2996,7 +2999,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-14T15:08:15+00:00"
+            "time": "2021-02-22T18:44:15+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -3080,12 +3083,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "f377a3dd1fde44d37b9831d68dc8dea3ffd28e13"
+                "reference": "5232de97ee3b75b0360528dae24e73db49566ab1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/f377a3dd1fde44d37b9831d68dc8dea3ffd28e13",
-                "reference": "f377a3dd1fde44d37b9831d68dc8dea3ffd28e13",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/5232de97ee3b75b0360528dae24e73db49566ab1",
+                "reference": "5232de97ee3b75b0360528dae24e73db49566ab1",
                 "shasum": ""
             },
             "require": {
@@ -3149,7 +3152,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-07T16:49:33+00:00"
+            "time": "2021-01-22T09:19:47+00:00"
         },
         {
             "name": "symfony/polyfill-php73",
@@ -3429,12 +3432,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "ef4afd72bca50a0aff61599d3e433c9ee64287ac"
+                "reference": "4c65d3b42477d9d302e5d35ec566086bb04f394d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/ef4afd72bca50a0aff61599d3e433c9ee64287ac",
-                "reference": "ef4afd72bca50a0aff61599d3e433c9ee64287ac",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/4c65d3b42477d9d302e5d35ec566086bb04f394d",
+                "reference": "4c65d3b42477d9d302e5d35ec566086bb04f394d",
                 "shasum": ""
             },
             "require": {
@@ -3451,8 +3454,8 @@
                 "ext-simplexml": "*",
                 "ext-tokenizer": "*",
                 "felixfbecker/advanced-json-rpc": "^3.0.3",
-                "felixfbecker/language-server-protocol": "^1.4",
-                "netresearch/jsonmapper": "^1.0 || ^2.0 || ^3.0",
+                "felixfbecker/language-server-protocol": "^1.5",
+                "netresearch/jsonmapper": "^1.0 || ^2.0 || ^3.0 || ^4.0",
                 "nikic/php-parser": "^4.10.1",
                 "openlss/lib-array2xml": "^1.0",
                 "php": "^7.1|^8",
@@ -3468,6 +3471,7 @@
                 "bamarni/composer-bin-plugin": "^1.2",
                 "brianium/paratest": "^4.0||^6.0",
                 "ext-curl": "*",
+                "php-parallel-lint/php-parallel-lint": "^1.2",
                 "phpdocumentor/reflection-docblock": "^5",
                 "phpmyadmin/sql-parser": "5.1.0||dev-master",
                 "phpspec/prophecy": ">=1.9.0",
@@ -3521,19 +3525,19 @@
                 "inspection",
                 "php"
             ],
-            "time": "2021-01-13T23:10:59+00:00"
+            "time": "2021-03-03T05:13:00+00:00"
         },
         {
             "name": "webmozart/assert",
             "version": "1.9.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webmozart/assert.git",
+                "url": "https://github.com/webmozarts/assert.git",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "shasum": ""
             },

@@ -13,7 +13,7 @@
   "require": {
     "php": "^7.1",
     "wp-oop/wordpress-interface": "^0.1.0-alpha1",
-    "dhii/module-interface": "^0.2-alpha1",
+    "dhii/module-interface": "^0.3-alpha1",
     "dhii/package-interface": "^0.1.0-alpha2",
     "dhii/stringable-interface": "^0.1",
     "dhii/versions": "^0.1.0-alpha1",
