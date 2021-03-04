@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [[*next-version*]] - YYYY-MM-DD
 ### Added
 - Now supports PHP 8, including newer tool versions (#15).
+- Psalm will now report info messages on CI (#15).
 - Now using Composer v2.
 
 ### Removed

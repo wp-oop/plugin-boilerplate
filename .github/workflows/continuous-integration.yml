@@ -28,7 +28,7 @@ jobs:
       run: ./vendor/bin/phpunit
 
     - name: Psalm
-      run: ./vendor/bin/psalm --threads=8 --diff
+      run: ./vendor/bin/psalm --show-info --threads=8 --diff
 
     - name: PHPCS
       run: ./vendor/bin/phpcs -s --runtime-set ignore_warnings_on_exit 1
