@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "69b7aa7da6a43b8776876ba802246fa7",
+    "content-hash": "a0d2b64c71b78e0eb62ea631b0aa8c1b",
     "packages": [
         {
             "name": "container-interop/service-provider",
@@ -481,25 +481,25 @@
         },
         {
             "name": "psr/container",
-            "version": "1.1.0",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/container.git",
-                "reference": "9fc7aab7a78057a124384358ebae8a1711b6f6fc"
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/container/zipball/9fc7aab7a78057a124384358ebae8a1711b6f6fc",
-                "reference": "9fc7aab7a78057a124384358ebae8a1711b6f6fc",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.0"
+                "php": ">=5.3.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "1.0.x-dev"
                 }
             },
             "autoload": {
@@ -514,7 +514,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "https://www.php-fig.org/"
+                    "homepage": "http://www.php-fig.org/"
                 }
             ],
             "description": "Common Container Interface (PHP FIG PSR-11)",
@@ -528,9 +528,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-fig/container/issues",
-                "source": "https://github.com/php-fig/container/tree/1.1.0"
+                "source": "https://github.com/php-fig/container/tree/master"
             },
-            "time": "2021-03-05T15:48:30+00:00"
+            "time": "2017-02-14T16:28:37+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
@@ -3346,12 +3346,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "c08d7d0d458eceb62996d81d3be8d9fbf5564ec4"
+                "reference": "68d45307f77241bd56b36c7087d0d7b537160760"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/c08d7d0d458eceb62996d81d3be8d9fbf5564ec4",
-                "reference": "c08d7d0d458eceb62996d81d3be8d9fbf5564ec4",
+                "url": "https://api.github.com/repos/symfony/console/zipball/68d45307f77241bd56b36c7087d0d7b537160760",
+                "reference": "68d45307f77241bd56b36c7087d0d7b537160760",
                 "shasum": ""
             },
             "require": {
@@ -3436,7 +3436,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-23T10:10:15+00:00"
+            "time": "2021-03-06T08:05:19+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -3848,16 +3848,16 @@
         },
         {
             "name": "symfony/service-contracts",
-            "version": "dev-main",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "e830e6ceebd6377b019e4c9a523d6f2c27007e4a"
+                "reference": "d15da7ba4957ffb8f1747218be9e1a121fd298a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/e830e6ceebd6377b019e4c9a523d6f2c27007e4a",
-                "reference": "e830e6ceebd6377b019e4c9a523d6f2c27007e4a",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/d15da7ba4957ffb8f1747218be9e1a121fd298a1",
+                "reference": "d15da7ba4957ffb8f1747218be9e1a121fd298a1",
                 "shasum": ""
             },
             "require": {
@@ -3867,11 +3867,10 @@
             "suggest": {
                 "symfony/service-implementation": ""
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.4-dev"
+                    "dev-master": "2.2-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -3908,7 +3907,7 @@
                 "standards"
             ],
             "support": {
-                "source": "https://github.com/symfony/service-contracts/tree/main"
+                "source": "https://github.com/symfony/service-contracts/tree/master"
             },
             "funding": [
                 {
@@ -3924,7 +3923,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-25T16:38:04+00:00"
+            "time": "2020-09-07T11:33:47+00:00"
         },
         {
             "name": "symfony/string",
@@ -4280,7 +4279,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "psr/container": 0,
         "johnpbloch/wordpress-core": 0
     },
     "prefer-stable": false,
