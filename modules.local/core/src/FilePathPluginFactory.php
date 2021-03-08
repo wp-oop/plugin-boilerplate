@@ -101,6 +101,12 @@ class FilePathPluginFactory implements FilePathPluginFactoryInterface
         // If plugin is in a directory, use directory name
         if (strstr($baseName, $directorySeparator) !== false) {
             $parts = explode($directorySeparator, $baseName);
+
+            // This isn't actually ever going to happen, because it only happens when the separator is an empty string
+            if ($parts === false) {
+                throw new UnexpectedValueException(sprintf('Could not deduce plugin slug from basename "%1$s"', $baseName));
+            }
+
             return $parts[0];
         }
 
