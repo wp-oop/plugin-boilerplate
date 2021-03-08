@@ -6,6 +6,7 @@ namespace Me\Plugin\Core;
 use Dhii\Package\Version\StringVersionFactoryInterface;
 use Dhii\Package\Version\VersionInterface;
 use DomainException;
+use Exception;
 use RuntimeException;
 use UnexpectedValueException;
 use WpOop\WordPress\Plugin\FilePathPluginFactoryInterface;
@@ -93,6 +94,9 @@ class FilePathPluginFactory implements FilePathPluginFactoryInterface
      * @param string $baseName The plugin's basename.
      *
      * @return string The plugin's slug.
+     *
+     * @throws UnexpectedValueException If cannot deduce slug from basename that includes a directory.
+     * @throws Exception If cannot determine slug.
      */
     protected function getPluginSlug(string $baseName): string
     {
