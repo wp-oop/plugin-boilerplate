@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a0d2b64c71b78e0eb62ea631b0aa8c1b",
+    "content-hash": "6e4f01af81fcb681dd599bbb3f9bddbe",
     "packages": [
         {
             "name": "container-interop/service-provider",
@@ -1829,12 +1829,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "e3324ecbde7319b0bbcf0fd7ca4af19469c38da9"
+                "reference": "f8d350d8514ff60b5993dd0121c62299480c989c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/e3324ecbde7319b0bbcf0fd7ca4af19469c38da9",
-                "reference": "e3324ecbde7319b0bbcf0fd7ca4af19469c38da9",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/f8d350d8514ff60b5993dd0121c62299480c989c",
+                "reference": "f8d350d8514ff60b5993dd0121c62299480c989c",
                 "shasum": ""
             },
             "require": {
@@ -1878,7 +1878,7 @@
                 "issues": "https://github.com/phpDocumentor/ReflectionDocBlock/issues",
                 "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/master"
             },
-            "time": "2020-11-18T14:27:38+00:00"
+            "time": "2021-03-07T11:12:25+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -3346,12 +3346,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "68d45307f77241bd56b36c7087d0d7b537160760"
+                "reference": "4e102e4de39852a1dcd3b2169d263b88afee7fff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/68d45307f77241bd56b36c7087d0d7b537160760",
-                "reference": "68d45307f77241bd56b36c7087d0d7b537160760",
+                "url": "https://api.github.com/repos/symfony/console/zipball/4e102e4de39852a1dcd3b2169d263b88afee7fff",
+                "reference": "4e102e4de39852a1dcd3b2169d263b88afee7fff",
                 "shasum": ""
             },
             "require": {
@@ -3436,7 +3436,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-03-06T08:05:19+00:00"
+            "time": "2021-03-08T21:52:55+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -4065,12 +4065,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "96e0743892f3239f089b13eb978c33d743cfe904"
+                "reference": "3c66b755e2468b0976979768972d298f4ba25651"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/96e0743892f3239f089b13eb978c33d743cfe904",
-                "reference": "96e0743892f3239f089b13eb978c33d743cfe904",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/3c66b755e2468b0976979768972d298f4ba25651",
+                "reference": "3c66b755e2468b0976979768972d298f4ba25651",
                 "shasum": ""
             },
             "require": {
@@ -4163,7 +4163,7 @@
                 "issues": "https://github.com/vimeo/psalm/issues",
                 "source": "https://github.com/vimeo/psalm/tree/master"
             },
-            "time": "2021-03-05T05:39:25+00:00"
+            "time": "2021-03-06T22:20:01+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -4171,12 +4171,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozarts/assert.git",
-                "reference": "4631e2c7d2d7132adac9fd84d4c1a98c10a6e049"
+                "reference": "6964c76c7804814a842473e0c8fd15bab0f18e25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozarts/assert/zipball/4631e2c7d2d7132adac9fd84d4c1a98c10a6e049",
-                "reference": "4631e2c7d2d7132adac9fd84d4c1a98c10a6e049",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/6964c76c7804814a842473e0c8fd15bab0f18e25",
+                "reference": "6964c76c7804814a842473e0c8fd15bab0f18e25",
                 "shasum": ""
             },
             "require": {
@@ -4185,7 +4185,7 @@
             },
             "conflict": {
                 "phpstan/phpstan": "<0.12.20",
-                "vimeo/psalm": "<3.9.1"
+                "vimeo/psalm": "<4.6.1 || 4.6.2"
             },
             "require-dev": {
                 "phpunit/phpunit": "^8.5.13"
@@ -4220,33 +4220,32 @@
             ],
             "support": {
                 "issues": "https://github.com/webmozarts/assert/issues",
-                "source": "https://github.com/webmozarts/assert/tree/master"
+                "source": "https://github.com/webmozarts/assert/tree/1.10.0"
             },
-            "time": "2021-02-28T20:01:57+00:00"
+            "time": "2021-03-09T10:59:23+00:00"
         },
         {
             "name": "webmozart/path-util",
-            "version": "dev-master",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozart/path-util.git",
-                "reference": "95a8f7ad150c2a3773ff3c3d04f557a24c99cfd2"
+                "reference": "d939f7edc24c9a1bb9c0dee5cb05d8e859490725"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/path-util/zipball/95a8f7ad150c2a3773ff3c3d04f557a24c99cfd2",
-                "reference": "95a8f7ad150c2a3773ff3c3d04f557a24c99cfd2",
+                "url": "https://api.github.com/repos/webmozart/path-util/zipball/d939f7edc24c9a1bb9c0dee5cb05d8e859490725",
+                "reference": "d939f7edc24c9a1bb9c0dee5cb05d8e859490725",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.3.3|^7.0",
+                "php": ">=5.3.3",
                 "webmozart/assert": "~1.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^4.6",
                 "sebastian/version": "^1.0.1"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -4271,15 +4270,16 @@
             "description": "A robust cross-platform utility for normalizing, comparing and modifying file paths.",
             "support": {
                 "issues": "https://github.com/webmozart/path-util/issues",
-                "source": "https://github.com/webmozart/path-util/tree/master"
+                "source": "https://github.com/webmozart/path-util/tree/2.3.0"
             },
-            "time": "2016-08-15T15:31:42+00:00"
+            "time": "2015-12-17T08:42:14+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "johnpbloch/wordpress-core": 0
+        "johnpbloch/wordpress-core": 0,
+        "webmozart/path-util": 0
     },
     "prefer-stable": false,
     "prefer-lowest": false,
