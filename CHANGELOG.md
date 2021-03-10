@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 - Dropped support for PHP 7.2 (#15).
 
+### Fixed
+- Incompatibility with newer `psr/container` (#15).
+
 ## [0.1.0-alpha2] - 2021-04-03
 ### Added
 - Using a caching container to cache services.
