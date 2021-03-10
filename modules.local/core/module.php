@@ -8,7 +8,9 @@ return function (string $rootDir, string $mainFile): ModuleInterface {
     $rootDir = dirname($mainFile);
     $moduleDir = dirname(__FILE__);
     $moduleIncDir = "$moduleDir/inc";
+    /** @psalm-suppress UnresolvableInclude */
     $factories = (require "$moduleIncDir/factories.php")($rootDir, $mainFile);
+    /** @psalm-suppress UnresolvableInclude */
     $extensions = (require "$moduleIncDir/extensions.php")($rootDir, $mainFile);
     $provider = new ServiceProvider($factories, $extensions);
     $module = new Module($provider);

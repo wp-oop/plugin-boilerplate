@@ -33,7 +33,6 @@
       <path value="$PROJECT_DIR$/vendor/dhii/collections-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/package-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/validation-interface" />
-      <path value="$PROJECT_DIR$/vendor/dhii/containers" />
       <path value="$PROJECT_DIR$/vendor/dhii/versions" />
       <path value="$PROJECT_DIR$/vendor/dhii/stringable-interface" />
       <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
@@ -68,6 +67,13 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/ocramius/package-versions" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/glob" />
+      <path value="$PROJECT_DIR$/vendor/dhii/exception-interface" />
+      <path value="$PROJECT_DIR$/vendor/dhii/factory-interface" />
+      <path value="$PROJECT_DIR$/vendor/dhii/data-container-interface" />
+      <path value="$PROJECT_DIR$/vendor/php-stubs/wordpress-stubs" />
+      <path value="$PROJECT_DIR$/vendor/dhii/containers" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
