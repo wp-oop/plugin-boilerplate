@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php-versions: ['7.1', '7.2', '7.3', '7.4']
+        php-versions: ['7.2', '7.3', '7.4', '8.0']
 
     steps:
     - uses: actions/checkout@v2
@@ -14,7 +14,6 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php-versions }}
-        tools: composer:v1
 
     - name: Analysing source code
       run: find ./src/ ./inc/ ./tests/ -type f -name '*.php' -print0 | xargs -0 -L 1 -P 4 -- php -l
@@ -29,7 +28,7 @@ jobs:
       run: ./vendor/bin/phpunit
 
     - name: Psalm
-      run: ./vendor/bin/psalm --show-info=false --threads=8 --diff
+      run: ./vendor/bin/psalm --show-info --threads=8 --diff
 
     - name: PHPCS
       run: ./vendor/bin/phpcs -s --runtime-set ignore_warnings_on_exit 1

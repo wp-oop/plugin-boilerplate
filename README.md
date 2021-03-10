@@ -1,4 +1,8 @@
 # WP-OOP - Plugin Boilerplate
+[![Continuous Integration](https://github.com/wp-oop/plugin-boilerplate/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/wp-oop/plugin-boilerplate/actions/workflows/continuous-integration.yml)
+[![Latest Stable Version](https://poser.pugx.org/wp-oop/plugin-boilerplate/v)](//packagist.org/packages/wp-oop/plugin-boilerplate)
+[![Latest Unstable Version](https://poser.pugx.org/wp-oop/plugin-boilerplate/v/unstable)](//packagist.org/packages/wp-oop/plugin-boilerplate)
+
 A boilerplate for starting WordPress plugins quickly.
 
 ## Details
