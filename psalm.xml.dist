@@ -25,12 +25,12 @@
 >
     <projectFiles>
         <directory name="src"/>
+        <directory name="modules.local"/>
     </projectFiles>
 
-    <extraFiles>
-        <directory name="vendor/johnpbloch/wordpress-core/wp-includes" />
-        <directory name="vendor/johnpbloch/wordpress-core/wp-admin/includes" />
-    </extraFiles>
+    <stubs>
+        <file name="vendor/php-stubs/wordpress-stubs/wordpress-stubs.php" />
+    </stubs>
 
 
     <issueHandlers>

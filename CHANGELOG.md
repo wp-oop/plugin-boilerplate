@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
 
+## [0.2.0-alpha2] - 2021-03-10
+### Fixed
+- Errors in local modules (#17).
+
+### Changed
+- Depend on WP stubs instead of WP itself (#17).
+- Actually use the stubs in Psalm (#17).
+
+### Added
+- Local modules are now scanned by Psalm (#17).
+- PHPStorm will now use PHPCS via remote interpreter (#17).
+
 ## [0.2.0-alpha1] - 2021-03-10
 ### Added
 - Now supports PHP 8, including newer tool versions (#15).

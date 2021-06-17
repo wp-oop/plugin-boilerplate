@@ -12,6 +12,9 @@ use UnexpectedValueException;
 use WpOop\WordPress\Plugin\FilePathPluginFactoryInterface;
 use WpOop\WordPress\Plugin\PluginInterface;
 
+use function plugin_basename;
+use function get_plugin_data;
+
 /**
  * Creates a plugin from plugin basename.
  */

@@ -44,11 +44,6 @@ class Plugin implements PluginInterface
     protected $textDomain;
 
     /**
-     * @var string
-     */
-    protected $slug;
-
-    /**
      * @var VersionInterface
      */
     protected $minPhpVersion;
