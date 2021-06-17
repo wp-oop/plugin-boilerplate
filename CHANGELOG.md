@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
+
+## [0.2.0-alpha3] - 2021-06-17
 ### Fixed
 - Initial install of Composer dependencies fails (#24).
 - Deprecated attribute in Psalm config causes failure (#24).
