@@ -10,7 +10,6 @@
         strictBinaryOperands="true"
         rememberPropertyAssignmentsAfterCall="true"
         allowPhpStormGenerics="true"
-        allowCoercionFromStringToClassConst="false"
         allowStringToStandInForClass="false"
         memoizeMethodCallResults="false"
         hoistConstants="false"
