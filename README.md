@@ -294,7 +294,8 @@ provide assistance during coding.
     docker-compose run --rm test vendor/bin/psalm
     ```
   
-  Will also be run automatically on CI.
+    - Will also be run automatically on CI.
+    - PHPStorm [integration][phpstorm-psalm] included.
   
 - **PHPCS**
 
@@ -305,9 +306,9 @@ provide assistance during coding.
     docker-compose run --rm test vendor/bin/phpcbf
     ```
   
-    By default, uses [PSR-12][] and some rules from the [Slevomat Coding Standard][].
-    
-    Will also be run automatically on CI.
+    - By default, uses [PSR-12][] and some rules from the [Slevomat Coding Standard][].
+    - Will also be run automatically on CI.
+    - PHPStorm [integration][phpstorm-phpcs] included.
 
 
 [modularity]: https://dev.to/xedinunknown/cross-platform-modularity-in-php-30bo
@@ -334,3 +335,5 @@ provide assistance during coding.
 [`xdebug.remote_host`]: https://xdebug.org/docs/all_settings#remote_host
 [`ModuleInterface`]: https://github.com/Dhii/module-interface/blob/develop/src/ModuleInterface.php
 [WI-54242]: https://youtrack.jetbrains.com/issue/WI-54242
+[phpstorm-psalm]: https://www.jetbrains.com/help/phpstorm/using-psalm.html
+[phpstorm-phpcs]: https://www.jetbrains.com/help/phpstorm/using-php-code-sniffer.html
