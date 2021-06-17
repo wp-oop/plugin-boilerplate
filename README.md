@@ -22,18 +22,18 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
     * **PHPUnit** - Run tests and get reports directly in PHPStorm.
     * **xDebug** - Set breakpoints and inspect your code in PHPStorm.
     * **Code coverage** - See what has not been tested yet in a friendly GUI.
-    
+
 - **Static Code Analysis** - Maintain a consistent coding style, and catch problems early.
 
     * **[Psalm][]** - Inspects your code for problems.
     * **[PHPCS][]** - Checks your code style. [PHPCBF][] can fix some of them automatically.
-    
+
 - **Continuous Integration** - Automatically verify that all contributions comply with
     project standards with [GitHub Actions][].
-    
+
 - **Modularity** - Keep concerns separated into [modules][modularity], which can be freely
     moved out of the package at any time thanks to the [`composer-merge-plugin`][].
-    
+
 ### Usage
 
 #### Getting Started
@@ -44,10 +44,10 @@ Use Composer to bootstrap your project.
     ```bash
     composer create-project wp-oop/plugin-boilerplate my_plugin --stability=dev
     ```
-   
+
    Here, `my_plugin` is the name of the project folder. Should correspond
    to the slug of your plugin.
-   
+
 2. Customize project
 
     _Note_: Asterisk `*` below denotes that changing this value requires rebuild of the images in order
@@ -83,7 +83,7 @@ Use Composer to bootstrap your project.
             PHPStorm's DB integration. If this value is changed, PHPStorm's configuration must be updated.
         * `ADMIN_USER`* - This and other `ADMIN_*` variables are used to determine WordPress admin
             details during automatic WordPress installation with [WP-CLI][].
-            
+
     - `composer.json`:
         * `name` - Name of your package.
         * `description` - Description of your package.
@@ -132,23 +132,23 @@ Use Composer to bootstrap your project.
     ```bash
     docker-compose up wp_dev 
     ```
-   
+
    This will bring up only the dev environment and its dependencies, which right now is
    the database. The database is a separate service, because in a deployed environment
    you may choose to use a different DB server.
-   
+
    After this, add an entry to your local [hosts file][]. The host should correspond to
    the value of `WP_DOMAIN` from the `.env` file. The IP would be Docker machine's IP
    address. On Linux, this is the same as [your machine's IP address][] on the local
    network, and usually `127.0.0.1` (localhost) works. If you are using Docker
    Machine (in a non-Linux environment), use `docker-machine ip` to find it.
-   
+
    Now you should be able to visit that domain, and see the website. The admin username
    and password are both `admin` by default, and are determined by the `ADMIN_USER`
    and `ADMIN_PASS` variables from the `.env` file. Your plugin should already be
    installed and active, and no other plugins should be installed. If this is not
    the case, inspect the output you got from `docker-compose up`.
-   
+
    If you use PHPStorm integrations that involve Docker, such as Composer,
    you maybe receive the error "Docker account not found". This is because, for some reason,
    PHPStorm requires the same name of the Docker deployment configuration to be used in all
@@ -170,7 +170,7 @@ is already configured for this.~~
 Currently, it is not possible to use PHPStorm's [composer integration][] because
 managing local modules with the [`composer-merge-plugin`][] require running
 `composer update --lock` instead of simply `composer update`. This is currently
-unsupported by PHPStorm, but a [feature request][WI-54242] has been submitted. 
+unsupported by PHPStorm, but a [feature request][WI-54242] has been submitted.
 
 **Do not run `composer update` for the modules' `composer.json` file!**
 All Composer operations must be performed on the root package's `composer.json` file.
@@ -205,7 +205,7 @@ in any required way, including:
     like the root project path, will return a [`ModuleInterface`][] instance.
     Another approach could be to use a named constructor, or even a dedicated
     factory class.
-    
+
 - Scanning certain paths.
 
     If modules do not conflict in any way, the module load order may be irrelevant.
@@ -293,19 +293,19 @@ provide assistance during coding.
     ```bash
     docker-compose run --rm test vendor/bin/psalm
     ```
-  
+
     - Will also be run automatically on CI.
     - PHPStorm [integration][phpstorm-psalm] included.
-  
+
 - **PHPCS**
 
     Run PHPCS/PHPCBF in project root:
-    
+
     ```bash
     docker-compose run --rm test vendor/bin/phpcs -s --report-source --runtime-set ignore_warnings_on_exit 1
     docker-compose run --rm test vendor/bin/phpcbf
     ```
-  
+
     - By default, uses [PSR-12][] and some rules from the [Slevomat Coding Standard][].
     - Will also be run automatically on CI.
     - PHPStorm [integration][phpstorm-phpcs] included.
