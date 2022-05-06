@@ -39,14 +39,9 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
 #### Getting Started
 Use Composer to bootstrap your project.
 
-1. Clone and install deps:
+1. Use this template
 
-    ```bash
-    composer create-project wp-oop/plugin-boilerplate my_plugin --stability=dev
-    ```
-
-   Here, `my_plugin` is the name of the project folder. Should correspond
-   to the slug of your plugin.
+    This Github repository is a [template][template-repo]. [Use it][use-template-repo] to create a project of your own from.
 
 2. Customize project
 
@@ -337,3 +332,5 @@ provide assistance during coding.
 [WI-54242]: https://youtrack.jetbrains.com/issue/WI-54242
 [phpstorm-psalm]: https://www.jetbrains.com/help/phpstorm/using-psalm.html
 [phpstorm-phpcs]: https://www.jetbrains.com/help/phpstorm/using-php-code-sniffer.html
+[template-repo]: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository
+[use-template-repo]: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template
