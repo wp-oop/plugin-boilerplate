@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
 
+## [0.2.0-alpha4] - 2022-05-06
+### Fixed
+- Used to be unable to build due to missing Compose argument mapping (eae9282).
+- Used to describe broken method of starting a new repo with this project.
+
 ## [0.2.0-alpha3] - 2021-06-17
 ### Fixed
 - Initial install of Composer dependencies fails (#24).
