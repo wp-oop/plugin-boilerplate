@@ -37,11 +37,12 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
 ### Usage
 
 #### Getting Started
-Use Composer to bootstrap your project.
 
 1. Use this template
 
     This Github repository is a [template][template-repo]. [Use it][use-template-repo] to create a project of your own from.
+    
+    Of course, you can always clone and push it elsewhere manually, or use another method of forking, if more appropriate.
 
 2. Customize project
 
