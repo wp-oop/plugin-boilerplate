@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+    <CommandLine>
+      <PhpTestInterpreterSettings>
+        <option name="interpreterName" value="Test" />
+      </PhpTestInterpreterSettings>
+    </CommandLine>
+    <TestRunner configuration_file="/app/phpunit.xml.dist" scope="XML" />
+    <method v="2" />
+  </configuration>
+</component>
