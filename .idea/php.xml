@@ -220,6 +220,7 @@
     </Psalm_settings>
   </component>
   <component name="PsalmOptionsConfiguration">
+    <option name="config" value="\\wsl$\Ubuntu-20.04\home\xedinunknown\projects\wp-oop\plugin-boilerplate\psalm.xml.dist" />
     <option name="transferred" value="true" />
   </component>
 </project>
