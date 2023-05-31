@@ -95,7 +95,7 @@
           <envs />
         </remote_data>
       </interpreter>
-      <interpreter id="41143493-fc09-4c8e-95b8-ee171ed1f0fd" name="Test" home="docker-compose://DATA" false="false" debugger_id="php.debugger.XDebug" debugger_extension="/usr/local/lib/php/extensions/no-debug-non-zts-20160303/xdebug.so">
+      <interpreter id="41143493-fc09-4c8e-95b8-ee171ed1f0fd" name="Test" home="docker-compose://DATA" false="false" debugger_id="php.debugger.XDebug" debugger_extension="/usr/local/lib/php/extensions/no-debug-non-zts-20190902/xdebug.so">
         <configuration_options>
           <configuration_option name="xdebug.remote_host" value="192.168.99.1" />
         </configuration_options>
@@ -118,7 +118,11 @@
           <configuration_options>
             <configuration_option name="include_path" value=".:/usr/local/lib/php" />
           </configuration_options>
-          <debuggers />
+          <debuggers>
+            <debugger_info debugger="xdebug" debugger_version="3.1.6">
+              <debug_extensions />
+            </debugger_info>
+          </debuggers>
           <loaded_extensions>
             <extension name="Core" />
             <extension name="PDO" />
@@ -150,6 +154,7 @@
             <extension name="sqlite3" />
             <extension name="standard" />
             <extension name="tokenizer" />
+            <extension name="xdebug" />
             <extension name="xml" />
             <extension name="xmlreader" />
             <extension name="xmlwriter" />
