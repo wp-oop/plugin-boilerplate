@@ -5,12 +5,12 @@
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="Me\Plugin\" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="Me\Plugin\Test\" />
+      <sourceFolder url="file://$MODULE_DIR$/modules.local/core/src" isTestSource="false" packagePrefix="Me\Plugin\Core\" />
       <sourceFolder url="file://$MODULE_DIR$/tests/Func" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/amp" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/byte-stream" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/container-interop/service-provider" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/phpspec/prophecy" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/version" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/service-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-text-template" />
@@ -36,7 +36,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/containers" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/package-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/human-readable-interface" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/stringable-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-ctype" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/string" />

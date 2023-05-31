@@ -22,7 +22,9 @@ return function (string $rootDir, string $mainFile): array {
             return $c->get('wordpress/plugin_factory');
         },
         'wordpress/plugin_factory' => function (ContainerInterface $c): FilePathPluginFactoryInterface {
-            return new FilePathPluginFactory($c->get('package/version_factory'));
+            $factory = $c->get('package/version_factory');
+            /** @var StringVersionFactoryInterface $factory */
+            return new FilePathPluginFactory($factory);
         },
         'me/plugin/version_factory' => function (ContainerInterface $c): StringVersionFactoryInterface {
             return $c->get('package/version_factory');

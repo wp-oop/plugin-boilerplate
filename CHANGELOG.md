@@ -4,7 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+
 ## [[*next-version*]] - YYYY-MM-DD
+### Fixed
+- Maintenance: update old configuration and deps, ran checks.
+- Psalm errors.
 
 ## [0.2.0-alpha4] - 2022-05-06
 ### Fixed

@@ -36,6 +36,7 @@ class ModularModule implements ModuleInterface
         foreach ($this->modules as $module) {
             $providers[] = $module->setup();
         }
+        /** @var list<ServiceProviderInterface> $providers */
 
         return new CompositeCachingServiceProvider($providers);
     }
