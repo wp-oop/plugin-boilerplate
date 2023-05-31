@@ -97,7 +97,7 @@
       </interpreter>
       <interpreter id="41143493-fc09-4c8e-95b8-ee171ed1f0fd" name="Test" home="docker-compose://DATA" false="false" debugger_id="php.debugger.XDebug" debugger_extension="/usr/local/lib/php/extensions/no-debug-non-zts-20190902/xdebug.so">
         <configuration_options>
-          <configuration_option name="xdebug.remote_host" value="192.168.99.1" />
+          <configuration_option name="xdebug.remote_host" value="gateway.docker.internal" />
         </configuration_options>
         <remote_data INTERPRETER_PATH="php" HELPERS_PATH="/opt/.phpstorm_helpers" VALID="true" RUN_AS_ROOT_VIA_SUDO="false" DOCKER_ACCOUNT_NAME="Docker" DOCKER_COMPOSE_SERVICE_NAME="test" DOCKER_REMOTE_PROJECT_PATH="/opt/project">
           <type_data command="RUN" />
