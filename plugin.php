@@ -13,3 +13,19 @@
  * Text Domain: plugin
  * Domain Path: /languages
  */
+
+(function (string $mainFile): void {
+    $rootDir = dirname($mainFile);
+    $autoload = "$rootDir/vendor/autoload.php";
+
+    if (file_exists($autoload)) {
+        require $autoload;
+    }
+
+    add_action('plugins_loaded', function () use ($mainFile, $rootDir) {
+        $incDir = "$rootDir/inc";
+        $bootstrap = require "$incDir/bootstrap.php";
+
+        $appContainer = $bootstrap($rootDir, $mainFile);
+    });
+})(__FILE__);

@@ -14,3 +14,5 @@ composer.lock export-ignore
 phpunit.xml export-ignore
 phpunit.xml.dist export-ignore
 docker export-ignore
+
+* text eol=lf

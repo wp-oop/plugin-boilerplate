@@ -8,6 +8,7 @@ services:
       args:
         PHP_BUILD_VERSION: $PHP_BUILD_VERSION
         PHP_TEST_VERSION: $PHP_TEST_VERSION
+        WORDPRESS_VERSION: $WORDPRESS_VERSION
         PROJECT_MOUNT_PATH: $PROJECT_MOUNT_PATH
         BUILD_ROOT_PATH: $BUILD_ROOT_PATH
         DOCROOT_PATH: $DOCROOT_PATH
@@ -49,6 +50,19 @@ services:
     volumes:
       - db:/var/lib/mysql
 
+  db_admin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: "${PROJECT_NAME}_db_admin"
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
+    depends_on:
+      - db
+    ports:
+    - 1234:80
+#    volumes:
+#    - db_admin
+
   build:
     build:
       context: ./
@@ -56,11 +70,30 @@ services:
       target: build
       args:
         PHP_BUILD_VERSION: $PHP_BUILD_VERSION
+        PHP_TEST_VERSION: $PHP_TEST_VERSION
+        WORDPRESS_VERSION: $WORDPRESS_VERSION
         BUILD_ROOT_PATH: $BUILD_ROOT_PATH
     container_name: "${PROJECT_NAME}_build"
+    working_dir: ${BUILD_ROOT_PATH}
     volumes:
     -  ${BASE_PATH}:${BUILD_ROOT_PATH}
+
+  test:
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile_wp
+      target: test
+      args:
+        BUILD_ROOT_PATH: $BUILD_ROOT_PATH
+        PHP_BUILD_VERSION: $PHP_BUILD_VERSION
+        PHP_TEST_VERSION: $PHP_TEST_VERSION
+        WORDPRESS_VERSION: $WORDPRESS_VERSION
+    container_name: "${PROJECT_NAME}_test"
+    working_dir: ${BUILD_ROOT_PATH}
+    volumes:
+      -  ${BASE_PATH}:${BUILD_ROOT_PATH}
 
 volumes:
   wordpress:
   db:
+  db_admin:
