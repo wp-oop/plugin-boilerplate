@@ -37,7 +37,7 @@
   "extra": {
     "merge-plugin": {
       "include": [
-        "modules.local/*/composer.json"
+        "modules/*/composer.json"
       ]
     }
   },

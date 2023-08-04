@@ -115,7 +115,7 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
         into packages of their own when necessary.
         
         Modules can be installed from other packages, or included in the package. In the latter
-        case, they should be added to the directory `modules.local`. One such module, the `core`
+        case, they should be added to the directory `modules`. One such module, the `core`
         module of the plugin, is already included in the package. Its `composer.json` should
         also be personalized, just like the `composer.json` of this package.
             
@@ -215,7 +215,7 @@ To add a module from another package, require that package with Composer
 and add the `ModuleInterface` instance to the list.
 
 ##### Local Modules
-To add a local module, add the module to the `modules.local` folder,
+To add a local module, add the module to the `modules` folder,
 and do the same as for any other module. Local modules may also declare their own
 dependencies by adding a `composer.json` file to their root folder.
 These files will be picked up by Composer when updating dependencies in

@@ -2,7 +2,7 @@
 
 return function (string $rootDir, string $mainFile): iterable {
     $modulesDir = "$rootDir/modules";
-    $localModulesDir = "$rootDir/modules.local";
+    $localModulesDir = "$rootDir/modules";
 
     $modules = [
         (require "$localModulesDir/core/module.php")($rootDir, $mainFile),
