@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Renamed `modules.local` to simply `modules` (#28).
 
+### Added
+- Now building on PHP 8.1 and 8.2 as well (#30).
+
 ## [0.2.0] - 2023-08-04
 ### Fixed
 - Maintenance: update old configuration and deps, ran checks.
