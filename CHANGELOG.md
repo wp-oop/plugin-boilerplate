@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [[*next-version*]] - YYYY-MM-DD
+### Changed
+- Renamed `modules.local` to simply `modules` (#28).
 
 ## [0.2.0] - 2023-08-04
 ### Fixed
