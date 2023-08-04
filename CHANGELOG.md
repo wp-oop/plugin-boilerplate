@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [[*next-version*]] - YYYY-MM-DD
+
+## [0.2.0] - 2023-08-04
 ### Fixed
 - Maintenance: update old configuration and deps, ran checks.
 - Psalm errors.
