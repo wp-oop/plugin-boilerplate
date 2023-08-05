@@ -3,34 +3,30 @@
 declare(strict_types=1);
 
 use Dhii\Package\Version\StringVersionFactoryInterface;
+use Dhii\Services\Factories\Alias;
+use Dhii\Services\Factory;
 use Dhii\Versions\StringVersionFactory;
 use Me\Plugin\Core\FilePathPluginFactory;
-use Psr\Container\ContainerInterface;
 use WpOop\WordPress\Plugin\FilePathPluginFactoryInterface;
 use WpOop\WordPress\Plugin\PluginInterface;
 
 return function (string $rootDir, string $mainFile): array {
     return [
-        'me/plugin/plugin' => function (ContainerInterface $c) use ($mainFile): PluginInterface {
-            $f = $c->get('wordpress/plugin_factory');
-            assert($f instanceof FilePathPluginFactoryInterface);
-            $plugin = $f->createPluginFromFilePath($mainFile);
-
-            return $plugin;
-        },
-        'me/plugin/plugin_factory' => function (ContainerInterface $c): FilePathPluginFactoryInterface {
-            return $c->get('wordpress/plugin_factory');
-        },
-        'wordpress/plugin_factory' => function (ContainerInterface $c): FilePathPluginFactoryInterface {
-            $factory = $c->get('package/version_factory');
-            /** @var StringVersionFactoryInterface $factory */
+        'me/plugin/plugin' => new Factory([
+            'wordpress/plugin_factory',
+        ], function (FilePathPluginFactoryInterface $factory) use ($mainFile): PluginInterface {
+            return $factory->createPluginFromFilePath($mainFile);
+        }),
+        'me/plugin/plugin_factory'  => new Alias('wordpress/plugin_factory'),
+        'wordpress/plugin_factory' => new Factory([
+            'package/version_factory',
+        ], function (StringVersionFactoryInterface $factory): FilePathPluginFactoryInterface {
             return new FilePathPluginFactory($factory);
-        },
-        'me/plugin/version_factory' => function (ContainerInterface $c): StringVersionFactoryInterface {
-            return $c->get('package/version_factory');
-        },
-        'package/version_factory' => function (): StringVersionFactoryInterface {
+        }),
+        'me/plugin/version_factory' => new Alias('package/version_factory'),
+        'package/version_factory' => new Factory([
+        ], function () {
             return new StringVersionFactory();
-        },
+        }),
     ];
 };
