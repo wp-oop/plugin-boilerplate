@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6bc694bbf82ff6effa1512482a84574f",
+    "content-hash": "3061a2fe5ab8f6e0bf1eb674d12c729e",
     "packages": [
         {
             "name": "container-interop/service-provider",
@@ -314,6 +314,54 @@
                 "source": "https://github.com/Dhii/package-interface/tree/v0.1.0-alpha4"
             },
             "time": "2021-12-08T15:57:36+00:00"
+        },
+        {
+            "name": "dhii/services",
+            "version": "0.1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/services.git",
+                "reference": "3e1891cee119790f56109210af81f4a29630c07e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/services/zipball/3e1891cee119790f56109210af81f4a29630c07e",
+                "reference": "3e1891cee119790f56109210af81f4a29630c07e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 | ^8.0",
+                "psr/container": "^1.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "phpunit/phpunit": "^7.0 | ^8.0 | ^9.0",
+                "slevomat/coding-standard": "^6.0",
+                "vimeo/psalm": "^4.8"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Services\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "A collection of useful DI service implementations.",
+            "support": {
+                "issues": "https://github.com/Dhii/services/issues",
+                "source": "https://github.com/Dhii/services/tree/0.1.x"
+            },
+            "time": "2023-08-05T01:19:03+00:00"
         },
         {
             "name": "dhii/validation-interface",

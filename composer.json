@@ -15,6 +15,7 @@
     "dhii/module-interface": "^0.3-alpha1",
     "psr/container": "^1.0",
     "dhii/containers": "^0.1.4-alpha2",
+    "dhii/services": "^0.1.1-alpha3",
     "wikimedia/composer-merge-plugin": "^2.0.1"
   },
   "require-dev": {
