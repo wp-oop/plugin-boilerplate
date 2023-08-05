@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [[*next-version*]] - YYYY-MM-DD
 ### Changed
 - Renamed `modules.local` to simply `modules` (#28).
+- Now using [`dhii/services`][] to declare services (#31).
 
 ### Added
 - Now building on PHP 8.1 and 8.2 as well (#30).
@@ -60,3 +61,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.1.0-alpha1] - 2021-01-14
 Initial version.
+
+
+[`dhii/services`]: https://github.com/Dhii/services
