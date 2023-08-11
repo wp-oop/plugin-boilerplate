@@ -2,6 +2,7 @@
 /node_modules/
 /build/
 /wordpress/
+/languages/
 /.idea/workspace.xml
 /.idea/codeStyles/
 /.idea/inspectionProfiles/
