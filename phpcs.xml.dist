@@ -4,15 +4,17 @@
          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
 
     <file>./src</file>
+    <file>./modules</file>
 
+    <exclude-pattern>./modules/**/tests</exclude-pattern>
+    <exclude-pattern>./modules/**/node_modules</exclude-pattern>
+    <exclude-pattern>*.js</exclude-pattern>
 
     <config name="installed_paths" value="../../slevomat/coding-standard"/>
+    <config name="testVersion" value="7.2-"/>
 
     <rule ref="PSR12"/>
     <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint"/>
-    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint">
-        <type>warning</type>
-    </rule>
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint"/>
     <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
     <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">

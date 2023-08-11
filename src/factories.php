@@ -6,15 +6,16 @@ use Dhii\Package\Version\StringVersionFactoryInterface;
 use Dhii\Services\Factories\Alias;
 use Dhii\Services\Factory;
 use Dhii\Versions\StringVersionFactory;
-use Me\Plugin\Core\FilePathPluginFactory;
+use Me\Plugin\FilePathPluginFactory;
 use WpOop\WordPress\Plugin\FilePathPluginFactoryInterface;
 use WpOop\WordPress\Plugin\PluginInterface;
 
-return function (string $rootDir, string $mainFile): array {
+return function (): array {
     return [
         'me/plugin/plugin' => new Factory([
             'wordpress/plugin_factory',
-        ], function (FilePathPluginFactoryInterface $factory) use ($mainFile): PluginInterface {
+            'me/plugin/main_file_path',
+        ], function (FilePathPluginFactoryInterface $factory, string $mainFile): PluginInterface {
             return $factory->createPluginFromFilePath($mainFile);
         }),
         'me/plugin/plugin_factory'  => new Alias('wordpress/plugin_factory'),
@@ -27,6 +28,15 @@ return function (string $rootDir, string $mainFile): array {
         'package/version_factory' => new Factory([
         ], function () {
             return new StringVersionFactory();
+        }),
+
+        #####################################################
+        # Module Wiring
+        #####################################################
+        'me/plugin/demo/plugin_title' => new Factory([
+            'me/plugin/plugin',
+        ], function (PluginInterface $plugin) {
+            return $plugin->getTitle();
         }),
     ];
 };

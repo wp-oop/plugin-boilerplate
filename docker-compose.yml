@@ -8,7 +8,9 @@ services:
       args:
         PHP_BUILD_VERSION: $PHP_BUILD_VERSION
         PHP_TEST_VERSION: $PHP_TEST_VERSION
+        PHP_MEMORY_LIMIT: $PHP_MEMORY_LIMIT
         WORDPRESS_VERSION: $WORDPRESS_VERSION
+        NODE_VERSION: $NODE_VERSION
         PROJECT_MOUNT_PATH: $PROJECT_MOUNT_PATH
         BUILD_ROOT_PATH: $BUILD_ROOT_PATH
         DOCROOT_PATH: $DOCROOT_PATH
@@ -31,8 +33,17 @@ services:
       WP_DOMAIN: ${WP_DOMAIN}
       WP_TITLE: ${WP_TITLE}
     volumes:
-      - wordpress:${DOCROOT_PATH}
       - ${BASE_PATH}:${PROJECT_MOUNT_PATH}
+      - type: bind
+        source: ./wordpress
+        target: "${DOCROOT_PATH}"
+      # This is just a guard that aborts if the mount folder for the plugin doesn't exist.
+      # This keeps Docker from creating a root-owned folder in the host file system.
+      # This only works with the long form mount definition. Only missing `source` causes an error.
+      # https://docs.docker.com/storage/bind-mounts/#differences-between--v-and---mount-behavior
+      - type: bind
+        source: "./wordpress/wp-content/plugins/${PLUGIN_NAME}"
+        target: /tmp/foo
     ports:
       - 80:80
 
@@ -59,9 +70,9 @@ services:
     depends_on:
       - db
     ports:
-    - 1234:80
+      - 1234:80
 #    volumes:
-#    - db_admin
+#      - db_admin
 
   build:
     build:
@@ -72,11 +83,13 @@ services:
         PHP_BUILD_VERSION: $PHP_BUILD_VERSION
         PHP_TEST_VERSION: $PHP_TEST_VERSION
         WORDPRESS_VERSION: $WORDPRESS_VERSION
+        NODE_VERSION: $NODE_VERSION
         BUILD_ROOT_PATH: $BUILD_ROOT_PATH
+        PHP_MEMORY_LIMIT: $PHP_MEMORY_LIMIT
     container_name: "${PROJECT_NAME}_build"
     working_dir: ${BUILD_ROOT_PATH}
     volumes:
-    -  ${BASE_PATH}:${BUILD_ROOT_PATH}
+      -  ${BASE_PATH}:${BUILD_ROOT_PATH}
 
   test:
     build:
@@ -88,6 +101,8 @@ services:
         PHP_BUILD_VERSION: $PHP_BUILD_VERSION
         PHP_TEST_VERSION: $PHP_TEST_VERSION
         WORDPRESS_VERSION: $WORDPRESS_VERSION
+        NODE_VERSION: $NODE_VERSION
+        PHP_MEMORY_LIMIT: $PHP_MEMORY_LIMIT
     container_name: "${PROJECT_NAME}_test"
     working_dir: ${BUILD_ROOT_PATH}
     volumes:

@@ -1,17 +1,19 @@
 <?php
+
 declare(strict_types=1);
 
-namespace Me\Plugin\Core;
+namespace Me\Plugin;
 
 use Dhii\Modular\Module\ModuleInterface;
 use Interop\Container\ServiceProviderInterface;
 use Psr\Container\ContainerInterface;
 
+/**
+ * A generic module.
+ */
 class Module implements ModuleInterface
 {
-    /**
-     * @var ServiceProviderInterface
-     */
+    /** @var ServiceProviderInterface */
     protected $serviceProvider;
 
     public function __construct(ServiceProviderInterface $serviceProvider)
@@ -32,6 +34,5 @@ class Module implements ModuleInterface
      */
     public function run(ContainerInterface $c): void
     {
-        // Nothing to do
     }
 }

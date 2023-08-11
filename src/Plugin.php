@@ -1,7 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
-namespace Me\Plugin\Core;
+namespace Me\Plugin;
 
 use Dhii\Package\Version\VersionInterface;
 use WpOop\WordPress\Plugin\PluginInterface;
@@ -63,8 +64,7 @@ class Plugin implements PluginInterface
         string $textDomain,
         VersionInterface $minPhpVersion,
         VersionInterface $minWpVersion
-    )
-    {
+    ) {
         $this->name = $name;
         $this->description = $description;
         $this->version = $version;
