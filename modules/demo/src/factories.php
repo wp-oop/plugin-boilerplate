@@ -9,6 +9,7 @@ return function (string $modDir): array {
         'me/plugin/demo/notice_text' => new Factory([
             'me/plugin/demo/plugin_title',
         ], function (string $pluginTitle): string {
+            // translators: 1: Plugin name.
             return sprintf(__('Modular plugin "%1$s" is active!', 'me-plugin'), $pluginTitle);
         }),
 
