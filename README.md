@@ -91,26 +91,8 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
         * `require` - Your project's package and platform requirements. You may want to change the PHP
             version if your minimal requirement is different. Don't forget to update `PHP_BUILD_VERSION`
             in `.env`.
-        * `require-dev` - Your project's development requirements. Apart from tools for testing,
-            this should (for now) contain any WordPress plugins that your plugin depends on,
-            and WordPress. If you add plugins here, you need to mount them as volumes in
-            `docker-compose.yml`, the `wp_dev` service. The source is the absolute path to the
-            `vendor` dir. The destination is an absolute path to the plugin folder in the `plugins`
-            directory of WordPress; you can use absolute paths, or the `DOCROOT_PATH` or `PROJECT_MOUNT_PATH`
-            from the `.env` file to help make the paths more versatile. If you want these
-            plugins to be active when the container is brought up, you need to also add these
-            instructions to the `docker/wp-entrypoint.sh` script. You may use WP CLI for this.
-            These instructions should go right below the line that says `# Custom setup instructions`.
-            This way, they will only run when WordPress is ready for action. **All changes to
-            the entrypoint script require image rebuild**: use `docker compose down` and
-            `docker compose build`. This is because these changes affect the application image,
-            which the entrypoint script is baked into.
-            
-            In the future, this may need to go into `require`, if a plugin build script takes care
-            of removing unnecessary plugins from `vendor` folder. This may be a good idea because
-            the plugin _does_ actually require other plugins, but they should not be shipped with
-            the plugin. Otherwise, completely Composer-managed WordPress installations will not
-            automatically install other required plugins.
+        * `require-dev` - Your project's development requirements. You may want to add plugins here
+            to get related IDE features; see [Adding Plugins][adding-plugins] for more information on this subject.
 
     - Module `composer.json`:
         This bootstrap uses the awesome [`composer-merge-plugin`][] to keep module depedencies
@@ -284,6 +266,29 @@ that `composer update --lock` is run before `composer update`. This is
 a great way to separate module dependencies from other dependencies.
 Consult that Composer plugin's documentation for more information.
 
+#### Adding Plugins
+If your plugin depends on or can integrate with other plugins, you may want to add them
+to the environment. In order to get IDE features such as auto-suggest for other plugin code,
+you may want to add them to your `require-dev`.
+
+In order to have the test WordPress website to have another plugin installed and active,
+add an [appropriate WP-CLI command][wpcli-plugin-install] to the `docker/wp-entrypoint.sh` script.
+Example:
+
+```bash
+wp plugin install bbpress --version=2.6.9 --activate --allow-root --path="${DOCROOT_PATH}"
+```
+
+Please note:
+
+- The `--allow-root` flag is required, because this will be run by Docker as the superuser.
+- The `--path` option is also required, and must be set to `$DOCROOT_PATH`, to make sure that
+all tools work on the same path. You may also use other variables from `.env` in this file,
+as long as they are configured to be passed into the service by `docker-compose.yml`.
+- The `--activate` flag activates the plugin after it's installed.
+
+##### As Composer Package
+
 #### Testing Code
 This bootstrap includes PHPUnit. It is already configured, and you can test
 that it's working by running the sample tests:
@@ -397,3 +402,5 @@ provide assistance during coding.
 [template-repo]: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository
 [use-template-repo]: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template
 [updating-dependencies]: #user-content-updating-dependencies
+[wpcli-plugin-install]: https://developer.wordpress.org/cli/commands/plugin/install/
+[adding-plugins]: #user-content-adding-plugins
