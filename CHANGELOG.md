@@ -22,7 +22,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - WordPress directory mapping: easier debugging, and more IDE features (#32).
 - Modules added to tools: tests being run, code being scanned (#32).
-- Modular build script: build the plugin, including modules, in place (#32).
+- Modular build script: build the plugin, including modules, in place;
+    or, build a dist version without affecting current working directory (#32).
 - Application init test (#32).
 - Node and WP-CLI now parts of relevant services (#32).
 
