@@ -233,7 +233,7 @@ This boilerplate promotes modularity, and supports [Dhii modules][] out of the b
 Any such module that exposes a [`ModuleInterface`][] implementation can be loaded,
 allowing it to run in the application, and making its services available.
 
-The list of modules returned by `inc/modules.php` is the authoritative source
+The list of modules returned by `src/modules.php` is the authoritative source
 of modules in the application. Because it is PHP code, modules can be loaded
 in any required way, including:
 
