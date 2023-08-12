@@ -299,17 +299,18 @@ as long as they are configured to be passed into the service by `docker-compose.
 - The `--activate` flag activates the plugin after it's installed.
 
 #### QA
-All QA tools can be run together by using the `qa` target in the included Makefile:
+Run all QA tools at once by using the `qa` target in the included Makefile.
+All QA is done in the `test` service.
 
 ```bash
-docker compose run --rm build make qa
+docker compose run --rm test make qa
 ```
 
 ##### Testing Code
 Run all tests at once using the `test` target:
 
 ```bash
-docker compose run --rm build make test
+docker compose run --rm test make test
 ```
 
 - **PHPUnit**
@@ -318,7 +319,7 @@ docker compose run --rm build make test
   that it's working by running the sample tests:
 
   ```bash
-  docker compose run --rm build make test-php
+  docker compose run --rm test make test-php
   ```
 
   - Will also be run automatically on CI.
@@ -328,7 +329,7 @@ docker compose run --rm build make test
 Run all static analysis tools at once by using the `scan` target:
 
 ```bash
-docker compose run --rm build make scan
+docker compose run --rm test make scan
 ```
 
 - **Psalm**
