@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [[*next-version*]] - YYYY-MM-DD
+
+## [0.3.0-alpha1] - 2023-08-12
 ### Changed
 - Renamed `modules.local` to simply `modules` (#28).
 - Now using [`dhii/services`][] to declare services (#31).
@@ -26,8 +28,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
     or, build a dist version without affecting current working directory (#32).
 - Application init test (#32).
 - Node and WP-CLI now parts of relevant services (#32).
-
-### Added
 - Now building on PHP 8.1 and 8.2 as well (#30).
 
 ## [0.2.0] - 2023-08-04
