@@ -335,25 +335,14 @@ path value to that string.
 
 At this time, inspection of code that runs _during a web request_ is not available.
 
-#### ~~Database UI~~ (Deprecated)
-This bootstrap includes [phpMyAdmin][], which provides a GUI for your database.
-To start working with it, you must first bring up the related container,
-as it is not brought up together with the dev environment:
-
-```bash
-docker compose up db_admin
-```
-
-You can now head over to the application's domain, defined usually by the
-`WP_DOMAIN` value from the `.env` file, but access it on port `1234`, e.g.
-`http://plugin.myhost:1234`. The username is `root`, and password is the one
-specified by the `DB_ROOT_PASSWORD` variable in the `.env` file.
-
+#### Database UI
 This bootstrap comes ready with configuration for PHPStorm's [database integration][].
-With it, it's possible to completely avoid bringing up the `db_admin` service.
-To use it, its settings must be up to date from the value of `DB_USER_PASSWORD`.
+To use it, its settings must be up to date with the value of `DB_USER_PASSWORD`.
 Using it is highly recommended, as it is an integrated DB client, and will
 provide assistance during coding.
+
+Alternatively, you are welcome to install and configure a [phpMyAdmin][docker-phpmyadmin]
+service or similar.
 
 #### Static Analysis
 - **Psalm**
@@ -414,3 +403,4 @@ provide assistance during coding.
 [wpcli-plugin-install]: https://developer.wordpress.org/cli/commands/plugin/install/
 [adding-plugins]: #user-content-adding-plugins
 [adding-modules]: #user-content-adding-modules
+[docker-phpmyadmin]: https://hub.docker.com/_/phpmyadmin
