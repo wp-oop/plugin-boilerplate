@@ -298,21 +298,65 @@ all tools work on the same path. You may also use other variables from `.env` in
 as long as they are configured to be passed into the service by `docker-compose.yml`.
 - The `--activate` flag activates the plugin after it's installed.
 
-#### Testing Code
-This bootstrap includes PHPUnit. It is already configured, and you can test
-that it's working by running the sample tests:
+#### QA
+All QA tools can be run together by using the `qa` target in the included Makefile:
 
 ```bash
-docker compose run --rm build vendor/bin/phpunit
+docker compose run --rm build make qa
 ```
 
-If you use PHPStorm, you can use its PHPUnit integration: right-click on any
-test or folder inside the `tests` directory, and choose "Run". This will do
-the same as the above command. Because the `build` service is used for tests,
-they will be run with its PHP version, which should correspond to your project's
-minimal requirements.
+##### Testing Code
+Run all tests at once using the `test` target:
 
-#### Debugging
+```bash
+docker compose run --rm build make test
+```
+
+- **PHPUnit**
+
+  This bootstrap includes [PHPUnit][]. It is already configured, and you can test
+  that it's working by running the sample tests:
+
+  ```bash
+  docker compose run --rm build make test-php
+  ```
+
+  - Will also be run automatically on CI.
+  - PHPStorm [integration][phpstorm-phpunit] included.
+
+##### Static Analysis
+Run all static analysis tools at once by using the `scan` target:
+
+```bash
+docker compose run --rm build make scan
+```
+
+- **Psalm**
+
+  Run Psalm in project root:
+
+    ```bash
+    docker compose run --rm test vendor/bin/psalm
+    ```
+
+    - Will also be run automatically on CI.
+    - PHPStorm [integration][phpstorm-psalm] included.
+
+- **PHPCS**
+
+  Run PHPCS/PHPCBF in project root:
+
+    ```bash
+    docker compose run --rm test vendor/bin/phpcs -s --report-source --runtime-set ignore_warnings_on_exit 1
+    docker compose run --rm test vendor/bin/phpcbf
+    ```
+
+    - By default, uses [PSR-12][] and some rules from the [Slevomat Coding Standard][].
+    - Will also be run automatically on CI.
+    - PHPStorm [integration][phpstorm-phpcs] included.
+
+
+##### Debugging
 The bootstrap includes xDebug in the `test` service of the Docker environment,
 and PHPStorm configuration. To use it, right click on any test or folder within
 the `tests` directory, and choose "Debug". This will run the tests with xDebug
@@ -344,38 +388,13 @@ provide assistance during coding.
 Alternatively, you are welcome to install and configure a [phpMyAdmin][docker-phpmyadmin]
 service or similar.
 
-#### Static Analysis
-- **Psalm**
-
-    Run Psalm in project root:
-
-    ```bash
-    docker compose run --rm test vendor/bin/psalm
-    ```
-
-    - Will also be run automatically on CI.
-    - PHPStorm [integration][phpstorm-psalm] included.
-
-- **PHPCS**
-
-    Run PHPCS/PHPCBF in project root:
-
-    ```bash
-    docker compose run --rm test vendor/bin/phpcs -s --report-source --runtime-set ignore_warnings_on_exit 1
-    docker compose run --rm test vendor/bin/phpcbf
-    ```
-
-    - By default, uses [PSR-12][] and some rules from the [Slevomat Coding Standard][].
-    - Will also be run automatically on CI.
-    - PHPStorm [integration][phpstorm-phpcs] included.
-
-
 [modularity]: https://dev.to/xedinunknown/cross-platform-modularity-in-php-30bo
 [Docker Machine]: https://github.com/docker/machine
 [WP-CLI]: https://wp-cli.org/
 [phpMyAdmin]: https://www.phpmyadmin.net/
 [PSR-12]: https://www.php-fig.org/psr/psr-12/
 [Slevomat Coding Standard]: https://github.com/slevomat/coding-standard
+[PHPUnit]: https://phpunit.de/
 [Psalm]: https://psalm.dev/
 [PHPCS]: https://github.com/squizlabs/PHP_CodeSniffer
 [PHPCBF]: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically
@@ -395,6 +414,7 @@ service or similar.
 [`xdebug.remote_host`]: https://xdebug.org/docs/all_settings#remote_host
 [`ModuleInterface`]: https://github.com/Dhii/module-interface/blob/develop/src/ModuleInterface.php
 [WI-54242]: https://youtrack.jetbrains.com/issue/WI-54242
+[phpstorm-phpunit]: https://www.jetbrains.com/help/phpstorm/using-phpunit-framework.html
 [phpstorm-psalm]: https://www.jetbrains.com/help/phpstorm/using-psalm.html
 [phpstorm-phpcs]: https://www.jetbrains.com/help/phpstorm/using-php-code-sniffer.html
 [template-repo]: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository

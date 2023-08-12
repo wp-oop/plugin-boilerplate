@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Deprecated
 - Using module factory files e.g. `module.php` is no longer recommended.
 - The `db_admin` service will be removed in a future release.
+- Direct usage of tools via CLI is not recommended; use `make` insatead.
 
 ## [0.2.0] - 2023-08-04
 ### Fixed
