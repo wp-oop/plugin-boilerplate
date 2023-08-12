@@ -30,6 +30,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Node and WP-CLI now parts of relevant services (#32).
 - Now building on PHP 8.1 and 8.2 as well (#30).
 
+### Deprecated
+- Using module factory files e.g. `module.php` is no longer recommended.
+
 ## [0.2.0] - 2023-08-04
 ### Fixed
 - Maintenance: update old configuration and deps, ran checks.
