@@ -298,8 +298,6 @@ all tools work on the same path. You may also use other variables from `.env` in
 as long as they are configured to be passed into the service by `docker-compose.yml`.
 - The `--activate` flag activates the plugin after it's installed.
 
-##### As Composer Package
-
 #### Testing Code
 This bootstrap includes PHPUnit. It is already configured, and you can test
 that it's working by running the sample tests:
