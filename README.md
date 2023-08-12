@@ -218,13 +218,8 @@ use `docker-compose run`. For example, to update dependencies you can run the fo
 docker-compose run --rm build composer update
 ```
 
-~~If you use PHPStorm, you can use the [composer integration][], as the project
-is already configured for this.~~
-
-Currently, it is not possible to use PHPStorm's [composer integration][] because
-managing local modules with the [`composer-merge-plugin`][] require running
-`composer update --lock` instead of simply `composer update`. This is currently
-unsupported by PHPStorm, but a [feature request][WI-54242] has been submitted.
+If you use PHPStorm, you can use the [composer integration][], as the project
+is already configured for this.
 
 **Do not run `composer update` for the modules' `composer.json` file!**
 All Composer operations must be performed on the root package's `composer.json` file.
