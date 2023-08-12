@@ -102,8 +102,8 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
             instructions to the `docker/wp-entrypoint.sh` script. You may use WP CLI for this.
             These instructions should go right below the line that says `# Custom setup instructions`.
             This way, they will only run when WordPress is ready for action. **All changes to
-            the entrypoint script require image rebuild**: use `docker-compose down` and
-            `docker-compose build`. This is because these changes affect the application image,
+            the entrypoint script require image rebuild**: use `docker compose down` and
+            `docker compose build`. This is because these changes affect the application image,
             which the entrypoint script is baked into.
             
             In the future, this may need to go into `require`, if a plugin build script takes care
@@ -133,7 +133,7 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
         be built:
 
        ```
-       docker-compose build
+       docker compose build
        ```
        
     2. Build the plugin in place.
@@ -152,7 +152,7 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
         possible to preview and test changes instantly after they are made.
 
         ```
-        docker-compose run --rm build make build
+        docker compose run --rm build make build
         ```
        
         _Note_: This step includes installation of declared dependencies.
@@ -165,7 +165,7 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
     [`docker-machine env`].
     
     ```bash
-    docker-compose up wp_dev 
+    docker compose up wp_dev 
     ```
 
    This will bring up only the dev environment and its dependencies, which right now is
@@ -182,7 +182,7 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
    and password are both `admin` by default, and are determined by the `ADMIN_USER`
    and `ADMIN_PASS` variables from the `.env` file. Your plugin should already be
    installed and active, and no other plugins should be installed. If this is not
-   the case, inspect the output you got from `docker-compose up`.
+   the case, inspect the output you got from `docker compose up`.
 
    If you use PHPStorm integrations that involve Docker, such as Composer,
    you maybe receive the error "Docker account not found". This is because, for some reason,
@@ -215,10 +215,10 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
 
 #### Updating Dependencies
 Composer is installed into the `build` service's image. To run composer commands,
-use `docker-compose run`. For example, to update dependencies you can run the following:
+use `docker compose run`. For example, to update dependencies you can run the following:
 
 ```bash
-docker-compose run --rm build composer update
+docker compose run --rm build composer update
 ```
 
 If you use PHPStorm, you can use the [composer integration][], as the project
@@ -289,7 +289,7 @@ This bootstrap includes PHPUnit. It is already configured, and you can test
 that it's working by running the sample tests:
 
 ```bash
-docker-compose run --rm build vendor/bin/phpunit
+docker compose run --rm build vendor/bin/phpunit
 ```
 
 If you use PHPStorm, you can use its PHPUnit integration: right-click on any
@@ -314,7 +314,7 @@ This is because different PHP versions use different versions of xDebug, and
 because the path to the xDebug extension depends on its version, that path will
 also change, invalidating the currently configured path.
 To fix this, the "Debugger extension" fields in the interpreter settings screen
-needs to be updated. You can run `docker-compose run test ls -lah /usr/local/lib/php/extensions`
+needs to be updated. You can run `docker compose run test ls -lah /usr/local/lib/php/extensions`
 to see the list of extensions. One of them should say someting like
 `no-debug-non-zts-20170718`. Change the corresponding part of the "Debugger extension"
 path value to that string.
@@ -327,7 +327,7 @@ To start working with it, you must first bring up the related container,
 as it is not brought up together with the dev environment:
 
 ```bash
-docker-compose up db_admin
+docker compose up db_admin
 ```
 
 You can now head over to the application's domain, defined usually by the
@@ -347,7 +347,7 @@ provide assistance during coding.
     Run Psalm in project root:
 
     ```bash
-    docker-compose run --rm test vendor/bin/psalm
+    docker compose run --rm test vendor/bin/psalm
     ```
 
     - Will also be run automatically on CI.
@@ -358,8 +358,8 @@ provide assistance during coding.
     Run PHPCS/PHPCBF in project root:
 
     ```bash
-    docker-compose run --rm test vendor/bin/phpcs -s --report-source --runtime-set ignore_warnings_on_exit 1
-    docker-compose run --rm test vendor/bin/phpcbf
+    docker compose run --rm test vendor/bin/phpcs -s --report-source --runtime-set ignore_warnings_on_exit 1
+    docker compose run --rm test vendor/bin/phpcbf
     ```
 
     - By default, uses [PSR-12][] and some rules from the [Slevomat Coding Standard][].
