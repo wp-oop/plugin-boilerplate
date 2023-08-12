@@ -91,26 +91,8 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
         * `require` - Your project's package and platform requirements. You may want to change the PHP
             version if your minimal requirement is different. Don't forget to update `PHP_BUILD_VERSION`
             in `.env`.
-        * `require-dev` - Your project's development requirements. Apart from tools for testing,
-            this should (for now) contain any WordPress plugins that your plugin depends on,
-            and WordPress. If you add plugins here, you need to mount them as volumes in
-            `docker-compose.yml`, the `wp_dev` service. The source is the absolute path to the
-            `vendor` dir. The destination is an absolute path to the plugin folder in the `plugins`
-            directory of WordPress; you can use absolute paths, or the `DOCROOT_PATH` or `PROJECT_MOUNT_PATH`
-            from the `.env` file to help make the paths more versatile. If you want these
-            plugins to be active when the container is brought up, you need to also add these
-            instructions to the `docker/wp-entrypoint.sh` script. You may use WP CLI for this.
-            These instructions should go right below the line that says `# Custom setup instructions`.
-            This way, they will only run when WordPress is ready for action. **All changes to
-            the entrypoint script require image rebuild**: use `docker-compose down` and
-            `docker-compose build`. This is because these changes affect the application image,
-            which the entrypoint script is baked into.
-            
-            In the future, this may need to go into `require`, if a plugin build script takes care
-            of removing unnecessary plugins from `vendor` folder. This may be a good idea because
-            the plugin _does_ actually require other plugins, but they should not be shipped with
-            the plugin. Otherwise, completely Composer-managed WordPress installations will not
-            automatically install other required plugins.
+        * `require-dev` - Your project's development requirements. You may want to add plugins here
+            to get related IDE features; see [Adding Plugins][adding-plugins] for more information on this subject.
 
     - Module `composer.json`:
         This bootstrap uses the awesome [`composer-merge-plugin`][] to keep module depedencies
@@ -119,9 +101,20 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
         into packages of their own when necessary.
         
         Modules can be installed from other packages, or included in the package. In the latter
-        case, they should be added to the directory `modules`. One such module, the `core`
-        module of the plugin, is already included in the package. Its `composer.json` should
-        also be personalized, just like the `composer.json` of this package.
+        case, they should be added to the directory `modules`. One such module, the `demo`
+        module of the plugin, is already included in the package. This is there only for demonstration
+        purposes, and can be renamed and re-written, or entirely removed. Either way, see
+        [Adding Modules][adding-modules] for more information on how to configure which modules
+        the application will use.
+
+        **Important**: Adding modules to other modules as dependencies is considered bad practice.
+        Modules don't interact with each other directly, but use an approach similar to DDD but applied
+        to service definitions to ensure that they are as isolated as possible. Instead, have the app
+        (project's main package) depend on other modules, and wire them together in the app's main module.
+        One legit reason for a module to depend on another module is if that other module isn't necessarily
+        loaded as a module, but its symbols are needed somewhere. However, in this case it's important to
+        avoid thinking of it as a module until it is added as the app's dependency, and to think of it
+        as simply a _library_.
 
 3. Build everything
     
@@ -133,7 +126,7 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
         be built:
 
        ```
-       docker-compose build
+       docker compose build
        ```
        
     2. Build the plugin in place.
@@ -152,8 +145,11 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
         possible to preview and test changes instantly after they are made.
 
         ```
-        docker-compose run --rm build make build
+        docker compose run --rm build make build
         ```
+       
+        _Note_: This step includes installation of declared dependencies.
+        See [Updating Dependencies][updating-dependencies] for more info on this subject.
             
 4. Spin up the dev environment
     
@@ -162,7 +158,7 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
     [`docker-machine env`].
     
     ```bash
-    docker-compose up wp_dev 
+    docker compose up wp_dev 
     ```
 
    This will bring up only the dev environment and its dependencies, which right now is
@@ -179,7 +175,7 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
    and password are both `admin` by default, and are determined by the `ADMIN_USER`
    and `ADMIN_PASS` variables from the `.env` file. Your plugin should already be
    installed and active, and no other plugins should be installed. If this is not
-   the case, inspect the output you got from `docker-compose up`.
+   the case, inspect the output you got from `docker compose up`.
 
    If you use PHPStorm integrations that involve Docker, such as Composer,
    you maybe receive the error "Docker account not found". This is because, for some reason,
@@ -212,19 +208,18 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
 
 #### Updating Dependencies
 Composer is installed into the `build` service's image. To run composer commands,
-use `docker-compose run`. For example, to update dependencies you can run the following:
+use `docker compose run`. For example, to update dependencies you can run the following:
 
 ```bash
-docker-compose run --rm build composer update
+docker compose run --rm build composer update
 ```
 
-~~If you use PHPStorm, you can use the [composer integration][], as the project
-is already configured for this.~~
+If you use PHPStorm, you can use the [composer integration][], as the project
+is already configured for this.
 
-Currently, it is not possible to use PHPStorm's [composer integration][] because
-managing local modules with the [`composer-merge-plugin`][] require running
-`composer update --lock` instead of simply `composer update`. This is currently
-unsupported by PHPStorm, but a [feature request][WI-54242] has been submitted.
+_Note_: If PHPStorm does not automatically assign a PHP interpreter for Composer,
+set it to use the "Build" interpreter. All build tasks, including dep installation,
+must be run inside the `build` service, which corresponds to that interpreter.
 
 **Do not run `composer update` for the modules' `composer.json` file!**
 All Composer operations must be performed on the root package's `composer.json` file.
@@ -238,7 +233,7 @@ This boilerplate promotes modularity, and supports [Dhii modules][] out of the b
 Any such module that exposes a [`ModuleInterface`][] implementation can be loaded,
 allowing it to run in the application, and making its services available.
 
-The list of modules returned by `inc/modules.php` is the authoritative source
+The list of modules returned by `src/modules.php` is the authoritative source
 of modules in the application. Because it is PHP code, modules can be loaded
 in any required way, including:
 
@@ -254,7 +249,7 @@ in any required way, including:
     In order to make modules de-coupled from the application, but to still be able
     to provide dependencies from the application to the module, it is sometimes
     desirable to use a "padding" between the application and the module's
-    initialization. In this project, as well as in some others, we use a
+    initialization. For this reason, in projects using this bootstrap you may sometimes find an
     `module.php` file. This file returns a function which, given some parameters
     like the root project path, will return a [`ModuleInterface`][] instance.
     Another approach could be to use a named constructor, or even a dedicated
@@ -282,21 +277,86 @@ that `composer update --lock` is run before `composer update`. This is
 a great way to separate module dependencies from other dependencies.
 Consult that Composer plugin's documentation for more information.
 
-#### Testing Code
-This bootstrap includes PHPUnit. It is already configured, and you can test
-that it's working by running the sample tests:
+#### Adding Plugins
+If your plugin depends on or can integrate with other plugins, you may want to add them
+to the environment. In order to get IDE features such as auto-suggest for other plugin code,
+you may want to add them to your `require-dev`.
+
+In order to have the test WordPress website to have another plugin installed and active,
+add an [appropriate WP-CLI command][wpcli-plugin-install] to the `docker/wp-entrypoint.sh` script.
+Example:
 
 ```bash
-docker-compose run --rm build vendor/bin/phpunit
+wp plugin install bbpress --version=2.6.9 --activate --allow-root --path="${DOCROOT_PATH}"
 ```
 
-If you use PHPStorm, you can use its PHPUnit integration: right-click on any
-test or folder inside the `tests` directory, and choose "Run". This will do
-the same as the above command. Because the `build` service is used for tests,
-they will be run with its PHP version, which should correspond to your project's
-minimal requirements.
+Please note:
 
-#### Debugging
+- The `--allow-root` flag is required, because this will be run by Docker as the superuser.
+- The `--path` option is also required, and must be set to `$DOCROOT_PATH`, to make sure that
+all tools work on the same path. You may also use other variables from `.env` in this file,
+as long as they are configured to be passed into the service by `docker-compose.yml`.
+- The `--activate` flag activates the plugin after it's installed.
+
+#### QA
+All QA tools can be run together by using the `qa` target in the included Makefile:
+
+```bash
+docker compose run --rm build make qa
+```
+
+##### Testing Code
+Run all tests at once using the `test` target:
+
+```bash
+docker compose run --rm build make test
+```
+
+- **PHPUnit**
+
+  This bootstrap includes [PHPUnit][]. It is already configured, and you can test
+  that it's working by running the sample tests:
+
+  ```bash
+  docker compose run --rm build make test-php
+  ```
+
+  - Will also be run automatically on CI.
+  - PHPStorm [integration][phpstorm-phpunit] included.
+
+##### Static Analysis
+Run all static analysis tools at once by using the `scan` target:
+
+```bash
+docker compose run --rm build make scan
+```
+
+- **Psalm**
+
+  Run Psalm in project root:
+
+    ```bash
+    docker compose run --rm test vendor/bin/psalm
+    ```
+
+    - Will also be run automatically on CI.
+    - PHPStorm [integration][phpstorm-psalm] included.
+
+- **PHPCS**
+
+  Run PHPCS/PHPCBF in project root:
+
+    ```bash
+    docker compose run --rm test vendor/bin/phpcs -s --report-source --runtime-set ignore_warnings_on_exit 1
+    docker compose run --rm test vendor/bin/phpcbf
+    ```
+
+    - By default, uses [PSR-12][] and some rules from the [Slevomat Coding Standard][].
+    - Will also be run automatically on CI.
+    - PHPStorm [integration][phpstorm-phpcs] included.
+
+
+##### Debugging
 The bootstrap includes xDebug in the `test` service of the Docker environment,
 and PHPStorm configuration. To use it, right click on any test or folder within
 the `tests` directory, and choose "Debug". This will run the tests with xDebug
@@ -312,7 +372,7 @@ This is because different PHP versions use different versions of xDebug, and
 because the path to the xDebug extension depends on its version, that path will
 also change, invalidating the currently configured path.
 To fix this, the "Debugger extension" fields in the interpreter settings screen
-needs to be updated. You can run `docker-compose run test ls -lah /usr/local/lib/php/extensions`
+needs to be updated. You can run `docker compose run test ls -lah /usr/local/lib/php/extensions`
 to see the list of extensions. One of them should say someting like
 `no-debug-non-zts-20170718`. Change the corresponding part of the "Debugger extension"
 path value to that string.
@@ -320,50 +380,13 @@ path value to that string.
 At this time, inspection of code that runs _during a web request_ is not available.
 
 #### Database UI
-This bootstrap includes [phpMyAdmin][], which provides a GUI for your database.
-To start working with it, you must first bring up the related container,
-as it is not brought up together with the dev environment:
-
-```bash
-docker-compose up db_admin
-```
-
-You can now head over to the application's domain, defined usually by the
-`WP_DOMAIN` value from the `.env` file, but access it on port `1234`, e.g.
-`http://plugin.myhost:1234`. The username is `root`, and password is the one
-specified by the `DB_ROOT_PASSWORD` variable in the `.env` file.
-
 This bootstrap comes ready with configuration for PHPStorm's [database integration][].
-With it, it's possible to completely avoid bringing up the `db_admin` service.
-To use it, its settings must be up to date from the value of `DB_USER_PASSWORD`.
+To use it, its settings must be up to date with the value of `DB_USER_PASSWORD`.
 Using it is highly recommended, as it is an integrated DB client, and will
 provide assistance during coding.
 
-#### Static Analysis
-- **Psalm**
-
-    Run Psalm in project root:
-
-    ```bash
-    docker-compose run --rm test vendor/bin/psalm
-    ```
-
-    - Will also be run automatically on CI.
-    - PHPStorm [integration][phpstorm-psalm] included.
-
-- **PHPCS**
-
-    Run PHPCS/PHPCBF in project root:
-
-    ```bash
-    docker-compose run --rm test vendor/bin/phpcs -s --report-source --runtime-set ignore_warnings_on_exit 1
-    docker-compose run --rm test vendor/bin/phpcbf
-    ```
-
-    - By default, uses [PSR-12][] and some rules from the [Slevomat Coding Standard][].
-    - Will also be run automatically on CI.
-    - PHPStorm [integration][phpstorm-phpcs] included.
-
+Alternatively, you are welcome to install and configure a [phpMyAdmin][docker-phpmyadmin]
+service or similar.
 
 [modularity]: https://dev.to/xedinunknown/cross-platform-modularity-in-php-30bo
 [Docker Machine]: https://github.com/docker/machine
@@ -371,6 +394,7 @@ provide assistance during coding.
 [phpMyAdmin]: https://www.phpmyadmin.net/
 [PSR-12]: https://www.php-fig.org/psr/psr-12/
 [Slevomat Coding Standard]: https://github.com/slevomat/coding-standard
+[PHPUnit]: https://phpunit.de/
 [Psalm]: https://psalm.dev/
 [PHPCS]: https://github.com/squizlabs/PHP_CodeSniffer
 [PHPCBF]: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically
@@ -390,7 +414,13 @@ provide assistance during coding.
 [`xdebug.remote_host`]: https://xdebug.org/docs/all_settings#remote_host
 [`ModuleInterface`]: https://github.com/Dhii/module-interface/blob/develop/src/ModuleInterface.php
 [WI-54242]: https://youtrack.jetbrains.com/issue/WI-54242
+[phpstorm-phpunit]: https://www.jetbrains.com/help/phpstorm/using-phpunit-framework.html
 [phpstorm-psalm]: https://www.jetbrains.com/help/phpstorm/using-psalm.html
 [phpstorm-phpcs]: https://www.jetbrains.com/help/phpstorm/using-php-code-sniffer.html
 [template-repo]: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository
 [use-template-repo]: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template
+[updating-dependencies]: #user-content-updating-dependencies
+[wpcli-plugin-install]: https://developer.wordpress.org/cli/commands/plugin/install/
+[adding-plugins]: #user-content-adding-plugins
+[adding-modules]: #user-content-adding-modules
+[docker-phpmyadmin]: https://hub.docker.com/_/phpmyadmin
