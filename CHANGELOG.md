@@ -25,8 +25,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Modular build script: build the plugin, including modules, in place (#32).
 - Application init test (#32).
 - Node and WP-CLI now parts of relevant services (#32).
-
-### Added
 - Now building on PHP 8.1 and 8.2 as well (#30).
 
 ## [0.2.0] - 2023-08-04
