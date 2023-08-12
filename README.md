@@ -249,7 +249,7 @@ in any required way, including:
     In order to make modules de-coupled from the application, but to still be able
     to provide dependencies from the application to the module, it is sometimes
     desirable to use a "padding" between the application and the module's
-    initialization. In this project, as well as in some others, we use a
+    initialization. For this reason, in projects using this bootstrap you may sometimes find an
     `module.php` file. This file returns a function which, given some parameters
     like the root project path, will return a [`ModuleInterface`][] instance.
     Another approach could be to use a named constructor, or even a dedicated
