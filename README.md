@@ -154,6 +154,9 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
         ```
         docker-compose run --rm build make build
         ```
+       
+        _Note_: This step includes installation of declared dependencies.
+        See [Updating Dependencies][updating-dependencies] for more info on this subject.
             
 4. Spin up the dev environment
     
@@ -393,3 +396,4 @@ provide assistance during coding.
 [phpstorm-phpcs]: https://www.jetbrains.com/help/phpstorm/using-php-code-sniffer.html
 [template-repo]: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository
 [use-template-repo]: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template
+[updating-dependencies]: #user-content-updating-dependencies
