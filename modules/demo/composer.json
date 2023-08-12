@@ -1,6 +1,6 @@
 {
-  "name": "me/plugin-core",
-  "description": "The core module of the plugin",
+  "name": "me/plugin-demo",
+  "description": "Demonstrates how a module may be added.",
   "minimum-stability": "dev",
   "license": "MIT",
   "authors": [
@@ -12,15 +12,18 @@
   ],
   "require": {
     "php": "^7.2 | ^8.0",
-    "wp-oop/wordpress-interface": "^0.1.0-alpha1",
     "dhii/module-interface": "^0.3-alpha1",
-    "dhii/package-interface": "^0.1.0-alpha3",
-    "dhii/versions": "^0.1.0-alpha2",
-    "dhii/containers": "^0.1"
+    "dhii/containers": "^0.1",
+    "dhii/services": "^0.1.1-alpha3"
   },
   "autoload": {
     "psr-4": {
-      "Me\\Plugin\\Core\\": "src"
+      "Me\\Plugin\\Demo\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Me\\Plugin\\Demo\\Test\\": "tests/phpunit"
     }
   }
 }

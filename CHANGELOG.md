@@ -9,6 +9,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Renamed `modules.local` to simply `modules` (#28).
 - Now using [`dhii/services`][] to declare services (#31).
+- Reworked modules (#32):
+  * No more `inc`: sources live in `src`.
+  * No more `module.php`: simply autoload them.
+  * Main module: `modules` entirely optional.
+  * Reworked bootstrap: now more re-usable.
+  * Reworked tests: now with base classes for different "levels".
+
+### Fixed
+- Missing WP plugin API functions (#32).
+
+### Added
+- WordPress directory mapping: easier debugging, and more IDE features (#32).
+- Modules added to tools: tests being run, code being scanned (#32).
+- Modular build script: build the plugin, including modules, in place (#32).
+- Application init test (#32).
+- Node and WP-CLI now parts of relevant services (#32).
 
 ### Added
 - Now building on PHP 8.1 and 8.2 as well (#30).

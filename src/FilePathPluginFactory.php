@@ -1,7 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
-namespace Me\Plugin\Core;
+namespace Me\Plugin;
 
 use Dhii\Package\Version\StringVersionFactoryInterface;
 use Dhii\Package\Version\VersionInterface;
@@ -25,11 +26,6 @@ class FilePathPluginFactory implements FilePathPluginFactoryInterface
      */
     protected $versionFactory;
 
-    /**
-     * FilePathPluginFactory constructor.
-     *
-     * @param StringVersionFactoryInterface $versionFactory
-     */
     public function __construct(StringVersionFactoryInterface $versionFactory)
     {
         $this->versionFactory = $versionFactory;
@@ -41,12 +37,22 @@ class FilePathPluginFactory implements FilePathPluginFactoryInterface
     public function createPluginFromFilePath(string $filePath): PluginInterface
     {
         if (!is_readable($filePath)) {
-            throw new RuntimeException(sprintf('Plugin file "%1$s" does not exist or is not readable', $filePath));
+            throw new RuntimeException(
+                sprintf(
+                    'Plugin file "%1$s" does not exist or is not readable',
+                    $filePath
+                )
+            );
         }
 
         $pluginData = get_plugin_data($filePath);
         if (empty($pluginData)) {
-            throw new UnexpectedValueException(sprintf('Plugin file "%1$s" does not have a valid plugin header', $filePath));
+            throw new UnexpectedValueException(
+                sprintf(
+                    'Plugin file "%1$s" does not have a valid plugin header',
+                    $filePath
+                )
+            );
         }
 
         $pluginData = array_merge([
@@ -111,7 +117,12 @@ class FilePathPluginFactory implements FilePathPluginFactoryInterface
 
             // This isn't actually ever going to happen, because it only happens when the separator is an empty string
             if ($parts === false) {
-                throw new UnexpectedValueException(sprintf('Could not deduce plugin slug from basename "%1$s"', $baseName));
+                throw new UnexpectedValueException(
+                    sprintf(
+                        'Could not deduce plugin slug from basename "%1$s"',
+                        $baseName
+                    )
+                );
             }
 
             return $parts[0];

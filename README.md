@@ -34,6 +34,10 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
 - **Modularity** - Keep concerns separated into [modules][modularity], which can be freely
     moved out of the package at any time thanks to the [`composer-merge-plugin`][].
 
+- **Build Script** - Use a single [GNU Make][] entrypoint to build the plugin in place,
+    including modules.
+
+
 ### Usage
 
 #### Getting Started
@@ -118,8 +122,40 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
         case, they should be added to the directory `modules`. One such module, the `core`
         module of the plugin, is already included in the package. Its `composer.json` should
         also be personalized, just like the `composer.json` of this package.
+
+3. Build everything
+    
+    1. Build the environment.
+
+        In order to develop, build, and test the plugin, certain things are required first.
+        These include: the database, WordPress core, PHP, Composer, and web server.
+        The project ships with all of this pre-configured, and the Docker services must first
+        be built:
+
+       ```
+       docker-compose build
+       ```
+       
+    2. Build the plugin in place.
+   
+        In order for the project source files to have the desired effect,
+        they first must be built into their runtime version. This may include:
+        installing dependencies, transpilation, copying or archiving files, whatever
+        the modules require to have desired effect, etc.
+        At the same time, a single entrypoint to various tasks performed as part
+        of the project build or QA allows for more centralized and automated control
+        over the project.
+
+        For this reason, the Makefile is shipped with the project, declaring commands
+        for commonly run tasks, including build. Run the following command to build
+        the plugin, including modules, in the plugin source directory: this makes it
+        possible to preview and test changes instantly after they are made.
+
+        ```
+        docker-compose run --rm build make build
+        ```
             
-3. Spin up the dev environment
+4. Spin up the dev environment
     
     Run the following command in the terminal. If you use Docker Machine, you will need to
     start it and configure your environment first with [`docker-machine start`][] and
@@ -316,6 +352,7 @@ provide assistance during coding.
 [Psalm]: https://psalm.dev/
 [PHPCS]: https://github.com/squizlabs/PHP_CodeSniffer
 [PHPCBF]: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically
+[GNU Make]: https://www.gnu.org/software/make/manual/make.html
 [GitHub Actions]: https://github.com/features/actions
 [Dhii modules]: https://github.com/Dhii/module-interface
 [hosts file]: https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/
