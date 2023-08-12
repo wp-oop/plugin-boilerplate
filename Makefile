@@ -4,7 +4,6 @@ BUILD_DIR := $(SRC_DIR)/build
 DIST_DIR := $(BUILD_DIR)/dist
 RELEASE_DIR := $(BUILD_DIR)/release
 BUILD_ENV := 'dev'
-RELEASE_WORKDIR := true
 RELEASE_VERSION := dev
 
 # List all files in the source directory, including dot files
