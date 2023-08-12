@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [[*next-version*]] - YYYY-MM-DD
+
+## [0.3.0-alpha1] - 2023-08-12
 ### Changed
 - Renamed `modules.local` to simply `modules` (#28).
 - Now using [`dhii/services`][] to declare services (#31).
