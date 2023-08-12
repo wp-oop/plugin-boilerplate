@@ -34,8 +34,8 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
 - **Modularity** - Keep concerns separated into [modules][modularity], which can be freely
     moved out of the package at any time thanks to the [`composer-merge-plugin`][].
 
-- **Build Script** - Use a single [GNU Make][] entrypoint to build the plugin in place,
-    including modules.
+- **Build Script** - Use a single [GNU Make][] entrypoint to build the plugin, including modules,
+    in place; or, build a dist version without affecting current working directory.
 
 
 ### Usage
@@ -187,6 +187,28 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
    projects, and there currently does not seem to be a way to commit that to the VCS.
    Because of this, you are required to create a Docker deployment yourself. Simply go to
    _Project Settings_ > _Docker_ and create a configuration named precisely "Docker Machine".
+
+5. Release
+
+    When you would like to release the current working directory as an installable plugin archive,
+    the shipped build script needs to perform a few transformations (like optimize prod dependencies),
+    and archive the package in a specific way. The following command will result in an archive
+    with name similar to `plugin-0.1.1-beta21+2023-08-12-12-37-22_105188ec9180.zip` being added
+    to `build/release`:
+
+    ```sh
+     docker compose run --rm build make release RELEASE_VERSION=0.1.1-beta21
+    ```
+   
+    As you can see, the resulting archive's name will reflect the time and commit hash
+    as SemVer metadata, aside from the version itself. If `RELEASE_VERSION` is omitted,
+    `dev` is used by default to indicate that this is not a tagged milestone, but work in progress.
+
+    _Note_: If the current working directory contains any edits registerable by Git
+    (disregarding any `.gitignore` rules), the commit hash will reflect a point in history
+    of the files in `build/dist`, rather than of project history. To ensure that a concrete
+    version is being released, clean the directory tree entirely. The best way to do that is
+    probably to create a fresh clone.
 
 #### Updating Dependencies
 Composer is installed into the `build` service's image. To run composer commands,
