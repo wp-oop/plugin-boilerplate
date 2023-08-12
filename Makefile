@@ -49,9 +49,11 @@ dist: copy_dist
 release: BUILD_ENV := prod
 release: dist
 	@mkdir -p $(RELEASE_DIR)
+	rm -r $(DIST_DIR)/.gitignore
 	git -C $(DIST_DIR) config user.email "me@my.com"; \
 	git -C $(DIST_DIR) config user.name "Automation"; \
 	RELEASE_VERSION=$(shell echo $(RELEASE_VERSION)); \
+	$$(git -C $(DIST_DIR) add --all); \
 	RELEASE_REF=$$(git -C $(DIST_DIR) stash create); \
 	RELEASE_REF=$$(echo "$${RELEASE_REF}" | cut -c 1-12); \
 	if [ -z "$${RELEASE_REF}" ]; then \
@@ -59,7 +61,7 @@ release: dist
             RELEASE_REF=$${RELEASE_REF:0:12}; \
         fi; \
 	TIMESTAMP=$$(date -u +"%Y-%m-%d-%H-%M-%S"); \
-	if [ -n "$(RELEASE_VERSION)" ]; then \
+	if [ -n "$${RELEASE_VERSION}" ]; then \
 		RELEASE_META=$${RELEASE_VERSION}+$${TIMESTAMP}_$${RELEASE_REF}; \
 	else \
 		RELEASE_META=$${TIMESTAMP}_$${RELEASE_REF}; \
