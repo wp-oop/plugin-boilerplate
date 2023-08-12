@@ -221,6 +221,10 @@ docker-compose run --rm build composer update
 If you use PHPStorm, you can use the [composer integration][], as the project
 is already configured for this.
 
+_Note_: If PHPStorm does not automatically assign a PHP interpreter for Composer,
+set it to use the "Build" interpreter. All build tasks, including dep installation,
+must be run inside the `build` service, which corresponds to that interpreter.
+
 **Do not run `composer update` for the modules' `composer.json` file!**
 All Composer operations must be performed on the root package's `composer.json` file.
 
