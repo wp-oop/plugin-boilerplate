@@ -101,9 +101,20 @@ Use this project as a starter for your [modular][modularity] WordPress plugin!
         into packages of their own when necessary.
         
         Modules can be installed from other packages, or included in the package. In the latter
-        case, they should be added to the directory `modules`. One such module, the `core`
-        module of the plugin, is already included in the package. Its `composer.json` should
-        also be personalized, just like the `composer.json` of this package.
+        case, they should be added to the directory `modules`. One such module, the `demo`
+        module of the plugin, is already included in the package. This is there only for demonstration
+        purposes, and can be renamed and re-written, or entirely removed. Either way, see
+        [Adding Modules][adding-modules] for more information on how to configure which modules
+        the application will use.
+
+        **Important**: Adding modules to other modules as dependencies is considered bad practice.
+        Modules don't interact with each other directly, but use an approach similar to DDD but applied
+        to service definitions to ensure that they are as isolated as possible. Instead, have the app
+        (project's main package) depend on other modules, and wire them together in the app's main module.
+        One legit reason for a module to depend on another module is if that other module isn't necessarily
+        loaded as a module, but its symbols are needed somewhere. However, in this case it's important to
+        avoid thinking of it as a module until it is added as the app's dependency, and to think of it
+        as simply a _library_.
 
 3. Build everything
     
@@ -404,3 +415,4 @@ provide assistance during coding.
 [updating-dependencies]: #user-content-updating-dependencies
 [wpcli-plugin-install]: https://developer.wordpress.org/cli/commands/plugin/install/
 [adding-plugins]: #user-content-adding-plugins
+[adding-modules]: #user-content-adding-modules
