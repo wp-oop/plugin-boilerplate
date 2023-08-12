@@ -335,7 +335,7 @@ path value to that string.
 
 At this time, inspection of code that runs _during a web request_ is not available.
 
-#### Database UI
+#### ~~Database UI~~ (Deprecated)
 This bootstrap includes [phpMyAdmin][], which provides a GUI for your database.
 To start working with it, you must first bring up the related container,
 as it is not brought up together with the dev environment:
