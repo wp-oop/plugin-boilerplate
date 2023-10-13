@@ -45,7 +45,7 @@ class FilePathPluginFactory implements FilePathPluginFactoryInterface
             );
         }
 
-        $pluginData = get_plugin_data($filePath);
+        $pluginData = get_plugin_data($filePath, true, false);
         if (empty($pluginData)) {
             throw new UnexpectedValueException(
                 sprintf(
