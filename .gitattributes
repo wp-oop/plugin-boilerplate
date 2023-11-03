@@ -20,3 +20,7 @@ Makefile export-ignore
 wp-cli.yml export-ignore
 
 * text eol=lf
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.gif -text
